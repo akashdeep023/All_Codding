@@ -25,6 +25,3 @@ click Create pull request
 type Some message
 click Create pull request
 ------------------Done-------------------
-
-
-
