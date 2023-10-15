@@ -1,0 +1,26 @@
+/* Qs-1 Ans  */
+.qs1{
+    height: 150px;
+    width: 300px;
+    background-color: grey;
+    border: 5px dotted black;
+    padding: 20px 1em 40px 2em;     /* by defoult browser ka font size 16px hota hai */
+    padding: 1em;
+}
+
+/* Qs-2 Ans */
+.qs2{
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Qs-3 Ans */
+li{
+    display: inline;
+}
+
+

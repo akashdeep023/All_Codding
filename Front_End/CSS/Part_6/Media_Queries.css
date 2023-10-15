@@ -1,0 +1,43 @@
+h1{
+    background-color: yellow;
+    border: 2px solid black;
+}
+/* media queries used for resposive website create */
+/* media features- width(of viewport) */
+@media(width: 400px){
+    h1{
+        background-color: red;
+        color: white;
+    }
+    div{
+        height: 200px;
+        width: 200px;
+        background-color: blue;
+        border: 2px solid black;
+    }
+}
+/* min-width -  isme width se bada me lagu */
+@media(min-width:700px){
+    h1{
+        background-color: green;
+    }
+}
+/* max-width - isme width se chota me lagu */
+@media(max-width:200px){
+    h1{
+        background-color: pink;
+    }
+}
+@media(min-width:200px) and (max-width:300px){
+    h1{
+        background-color: blue;
+    }
+}
+/* media querie - orientation(of viewbort) */
+@media(orientation: landscape){
+    h1{
+        background-color: aqua;
+        color: brown;
+    }
+}
+

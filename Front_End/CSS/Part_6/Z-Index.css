@@ -1,0 +1,105 @@
+.box{
+    height: 150px;
+    width: 150px;
+    border: 2px solid black;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.box1{
+    background-color: aquamarine;
+/* z-index */
+    /* z-index tabhi used hota h jab usme position diya ho */
+    /* position - static / defoult ho to z-index nhi work karta hai */
+    position: relative;
+    z-index: 1;
+}
+.box2{
+    background-color: darksalmon;
+    position: relative;
+    bottom: 50px;
+    left: 50px;
+    /* z-index by defoult "0" ya "auto" hota hai */
+    /* jiska jitna z-index utna upper me hota hai */
+    /* z-index: auto; */
+    /* z-index: 2; */
+    /* z-index: -1; */
+}
+/* ---------------------------------------------------------------- */
+/* ---------------------------------------------------------------- */
+.container{
+    width: 800px;
+    height: 800px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    place-items: center;
+    transform: rotate(220deg);
+    align-items: center;
+    
+}
+.circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.circle1{
+    background-color: rgb(30, 0, 30);
+    position: relative;
+    top: 150px;
+    left: 250px;
+}
+.circle2{
+    background-color: rgb(50, 0, 50);
+    position: relative;
+    top: 50px;
+    left: 50px;
+    
+}
+.circle3{
+    background-color: rgb(70, 0, 70);
+    position: relative;
+    top: 80px;
+    left: -80px;
+}
+.circle4{
+    background-color: rgb(90, 0, 90);
+    position: relative;
+    top: 150px;
+    left: -250px;
+}
+.circle5{
+    background-color: rgb(110, 0, 110);
+    position: relative;
+    bottom: -20px;
+    left: 320px;
+}
+.circle6{
+    background-color: rgb(130, 0, 130);
+    position: relative;
+    bottom: -50px;
+    left: 50px;
+}
+.circle7{
+    background-color: rgb(150, 0, 150);
+    position: relative;
+    right: 220px;
+    top: 20px;
+}
+.circle8{
+    background-color: rgb(170, 0, 170);
+    position: relative;
+    bottom: 50px;
+    right: 450px;
+}
+.circle9{
+    background-color: rgb(190, 10, 190);
+    position: relative;
+    bottom: 320px;
+    left: 180px;
+}
+
+
+

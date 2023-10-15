@@ -1,0 +1,108 @@
+/* alpha ka kaam color ki visibility dikhana */
+#alpha{
+    height: 200px;
+    width: 200px;
+    background-color: rgba(255, 0, 0, 0.5);     /* alpha=0.5 || range - 0 to 1 ya 00 to ff in #code */
+}
+
+/* ------------------------------------------- */
+/* opacity ka kaam pure element ka visibility dikhana */
+#opacity{
+    height: 200px;
+    width: 200px;
+    background-color: #ffa511;
+    opacity: 0.5;       /* opacity=0.5 || range - 0 to 1 */
+}
+
+/* ------------------------------------------- */
+/* transition ka kaam ak states se dusre states me jane ka. jab :hover ya :active etc ho tab  */
+#transition{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    margin: 0 auto;     /* 0 auto karne se center aa jata hai */
+    margin-top: 10px;
+    /* transition-duration: 2s;
+    transition-delay: 1s; */
+    /* transition (shortform)= property name | duration | timing function | delay */
+    transition:margin-top 2s ease-in-out 0.2s;
+}
+#transition:hover{
+    background-color: rgb(255, 0, 0);
+    /* border-radius: 50%; */
+    margin-top: 200px;
+}
+
+/* ------------------------------------------- */
+/* transform ka kaam rotate | scale | skew | translate an element */
+/* transform property inner element pe lagu hota hai */
+section#transform{
+    margin: 200px 100px;
+}
+div.transform{
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    background-color: #7aa874;
+    border: 2px solid black;
+    margin: 10px auto;
+}
+div.transform:nth-of-type(2n){
+    background-color: #f7db6a;
+}
+div.transform:nth-of-type(3n){
+    background-color: #ebb02d;
+}
+/* rotate  deg | red me*/
+#div1{          /* clock wise */
+    transform: rotate(45deg);   
+}
+/* scale decimal no me*/
+#div2{          /* size =1 hai to 0.5 me x axix or y-axis dono 0.5 ho jayega */
+    /* transform: scale(0.5); */
+    /* transform: scale(2,0.5); */
+    transform: scaleX(2);
+}
+/* translate px | % me*/
+#div3{          /* px me top bottom right or left side me karte h */
+    /* transform: translate(50px,50px); */
+    /* transform: translateY(100px); */
+    transform: translateX(-100px);
+}
+/* skew deg me */
+#div4{          /* skew se element me corner se teald kiya jata h */
+    transform: skew(30deg);
+}
+/* Transform all property  */
+#div5{
+    transform: rotate(45deg) scale(1.2) translate(100px) skew(30deg);
+}
+
+/* ------------------------------------------- */
+/* box shadow - add shadow effects around an elem frame*/
+/* box-shadow - x-axis | y-axis | blur-radius | color*/
+#boxShadow{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    background-color: blue;
+    margin: 50px auto;
+    box-shadow: 5px 5px 10px black;
+}
+
+/* ------------------------------------------- */
+/* background image */
+#backgroundImage{
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    padding-top: 20px;
+    color: rgb(255, 255, 255);
+    background-color: lightseagreen;
+    margin: 20px auto;
+    background-image: url(bgimage.webp);
+    /* background-size- contain=repeat | cover=croop | auto=stretch */
+    background-size: cover; /* most used */
+}
+
+

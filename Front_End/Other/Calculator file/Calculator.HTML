@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@1,600&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="Calculator.CSS"> -->
+    <style>*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;  
+        font-family: 'Zilla Slab', serif; 
+    }
+    body{
+        width: 100% ;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background: linear-gradient(45deg,#000000,rgb(118, 32, 32)) ; */
+        background-color: black;
+    }
+    .calculator{
+        padding: 2px;
+        border: 1px rgb(206, 204, 204) solid ;
+        box-shadow: -5px -5px 20px rgb(187, 187, 187);
+        border-radius: 25px;
+        background-color: transparent;
+        margin: 3px;
+        
+    }
+    input{
+        font-size: 30px;
+        text-align: right;
+        width: 260px;
+        padding: 20px;
+        border: none;
+        border-radius: 20px;
+        margin-bottom: 5px;
+        background: transparent;
+        color: #ffffff;
+        cursor: pointer;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-shadow: 1px 1px 3px rgb(34, 0, 255);
+    }
+    input::placeholder{
+        color: #ffffff;
+        text-shadow: 1px 1px 3px rgb(34, 0, 255);
+    }
+    
+    button{
+        font-size: 24px;
+        text-align: center;
+        color: #ffffff;
+        width: 45px;
+        height: 45px;
+        border: none;
+        border-radius: 50%;
+        box-shadow: -7px -7px 15px rgb(210, 204, 204);
+        background-color: transparent;
+        margin: 10px;
+        text-shadow: 1px 1px 3px rgb(34, 0, 255);
+        cursor: pointer;
+    }
+    #opretor{
+        color: aqua;
+    }
+    #equal{
+        background-color: orange;
+    }
+    h5{
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+    }
+    h2{
+        font-size: 30px;
+        text-decoration: underline;
+        text-shadow: 1px 1px 1px yellow;
+        color: aqua ;
+        display: flex;
+        justify-content: center;
+        margin-top: 3px;
+        text-transform: uppercase;
+    }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Calculator</h2>
+        <input type="text" placeholder="0" id="inputBox">
+        <div class="button">
+            <button id="opretor">AC</button>
+            <button id="opretor">DEL</button>
+            <button id="opretor">%</button>
+            <button id="opretor">/</button>
+        </div>
+        <div>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button id="opretor">*</button>
+        </div>
+        <div>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button id="opretor">-</button>
+        </div>
+        <div>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button id="opretor">+</button>
+        </div>
+        <div>
+            <button>00</button>
+            <button>0</button>
+            <button>.</button>
+            <button id="equal">=</button>
+        </div>
+        <h5>Akash deep</h5>
+    </div>
+    <!-- <script src="Calculator.js"></script> -->
+    <script>let input= document.getElementById('inputBox');
+        let buttons= document.querySelectorAll('button');
+        let string="";
+        let arr= Array.from(buttons);
+        arr.forEach(button => {
+            button.addEventListener('click', (e) =>{
+                if(e.target.innerHTML == '='){
+                    string=eval(string);
+                    input.value =string;
+                }
+                else if(e.target.innerHTML == 'AC'){
+                    string="";
+                    input.value=string;
+                } 
+                else if(e.target.innerHTML == 'DEL'){
+                    string=string.substring(0, string.length-1);
+                    input.value=string;
+                }
+                else{
+                    string+= e.target.innerHTML;
+                    input.value= string;
+                }
+                
+            })
+        })</script>
+</body>
+</html>

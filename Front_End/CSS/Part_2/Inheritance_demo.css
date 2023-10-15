@@ -1,0 +1,21 @@
+/* inheritance properties */
+/* parent ka properties child inheritance kar lega */
+
+/* sabhi selector inheritance nhi karte hai */
+/* ex- input | button | width | height | border etc. */
+div{
+    background-color: antiquewhite;
+}
+form{
+    background-color: lightblue;
+}
+
+/* input ya button ko same parent properties inheritance ke liye-  */
+/* input or button ka parent form hai esi liye form se properties inheritance kar rha hai div se nhi agar form me same properties nhi hota to vo uske parent se properties inheritance karta */
+
+input{
+    background-color: inherit;
+}
+button{
+    background-color: inherit;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Group (Component)</title>
+
+    <!-- bootstrap ka stylesheet link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- external css link -->
+    <link rel="stylesheet" href="Button_Group(Component).css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bootstrap Demo Button Group</h1>
+        <!-- without button group -->
+        <button class="btn btn-outline-danger ">Btn1</button>
+        <button class="btn btn-danger ">Btn2</button>
+        <button class="btn btn-outline-danger ">Btn3</button>
+        <hr>
+        <!-- button group -->
+        <div class="btn-group ">
+            <button class="btn btn-danger ">Btn1</button>
+            <button class="btn btn-outline-danger ">Btn2</button>
+            <button class="btn btn-danger ">Btn3</button>
+        </div>
+        <hr>
+        <!-- link groups -->
+        <div class="btn-group">
+            <a href="#" class="btn btn-success">Link1</a>
+            <a href="#" class="btn btn-primary">Link2</a>
+            <a href="#" class="btn btn-secondary">Link3</a>
+        </div>
+        <hr>
+        <!-- checkbox group -->
+        <div class="btn-group">
+            <input type="checkbox" class="btn-check" id="btncheck1">
+            <label for="btncheck1" class="btn btn-outline-primary">Checkbox 1</label>
+            <input type="checkbox" class="btn-check" id="btncheck2">
+            <label for="btncheck2" class="btn btn-outline-primary">Checkbox 2</label>
+            <input type="checkbox" class="btn-check" id="btncheck3">
+            <label for="btncheck3" class="btn btn-outline-primary">Checkbox 3</label>
+        </div>
+        <hr>
+        <!-- radio group -->
+        <div class="btn-group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1">
+            <label for="btnradio1" class="btn btn-outline-primary">Checkbox 1</label>
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2">
+            <label for="btnradio2" class="btn btn-outline-primary">Checkbox 2</label>
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3">
+            <label for="btnradio3" class="btn btn-outline-primary">Checkbox 3</label>
+        </div>
+        <hr>
+
+
+
+    </div>
+    
+
+    <!-- bootstrap ka javascript link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

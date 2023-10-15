@@ -1,0 +1,13 @@
+/* normal button */
+button{
+    color: red;
+    background-color: yellow;
+    border:  1px solid orange;
+    border-radius: 5px;
+}
+/* custimize bootstrap button */
+.btn-dark{
+    background: pink;
+    border: 1px solid pink;
+}
+

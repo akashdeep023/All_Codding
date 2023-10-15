@@ -1,0 +1,49 @@
+h2 i{
+    color: lightcoral;
+}
+h1 span{
+    color: darkorchid;
+}
+h1, h2 {
+    padding-left: 10px;
+}
+.card{
+    /* height: 520px; */
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 20px;
+    transition: 1s ease-in-out .3s;
+    
+}
+img{
+    border-radius: 25px;
+    width: 100%;
+    
+}
+#pets{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+}
+h4{
+    color: green;
+    text-align: right;
+}
+@media(max-width: 1400px){
+    #pets{
+        flex-wrap: wrap;
+        align-content: space-evenly;
+    }
+}
+.card:hover{
+    box-shadow: 5px 5px 20px black;
+    width: 450px;
+    position: relative;
+    top: 20px;
+}
+
+
+
+

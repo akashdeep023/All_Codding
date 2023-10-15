@@ -1,0 +1,100 @@
+/* container ka display-flex hai to sirf container ka direct chaild hi flex-item hoga */
+/* Flexbox */
+/* Flexbox layout used responsive website for computer, tablet, mobile */
+/* Flex moder - direction=row ho to x-axis=main axis or y-axis= cross axis  */
+#container{
+    height: 500px;
+    width: 80%;
+    background-color: azure;
+    margin: 10px auto;
+    border: 2px solid black;
+    display: flex;      /* by defoult || flex-direction: row | justify-content: flex-start | flex-wrap: nowrap*/
+    /* display: inline-flex; */
+
+/* flexbox direction */
+    /* flex-direction: row; */
+    /* flex-direction: column; */
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column-reverse; */
+/* justify-content | main-axis | direction-row ho to width me space ka used */
+    /* justify-content: flex-start; */
+    /* justify-content: flex-end; */
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+    /* justify-content: space-around; */
+    /* justify-content: space-evenly; */
+    /* justify-content: baseline; */
+/* flex-wrap */
+    /* flex-wrap: nowrap; */ 
+    flex-wrap: wrap;
+    /* flex-wrap: wrap-reverse; */
+/* align-items */
+/* align-items container ke sabhi element pe hota hai  */
+    /* align-items: flex-start; */
+    /* align-items: flex-end; */
+    /* align-items: center; */
+        /* align-items baseline ho to vo text ke baseline me element adjust ho jayege  */
+    /* align-items: baseline; */
+/* align-content |cross-axis |direction-row ho to height me space ka used */
+    /* align-content: flex-start; */
+    /* align-content: flex-end; */
+    /* align-content: center; */
+    /* align-content: space-between; */
+    /* align-content: space-around; */
+    /* align-content: space-evenly; */
+    /* align-content: baseline; */
+/* align-self */
+/* align-self container ke selected element pe hota hai  */
+}
+/* baseline */
+#container div#org{
+    width: 200px;
+    height: 200px;
+    font-size: 2em;
+/* align-self */
+    /* align-self: flex-start; */
+    /* align-self: flex-end; */
+    /* align-self: center; */
+    /* align-self: baseline; */
+/* flex sizing | main-axis pe used hota hai */
+        /* flex-basis se mian-axis ka maan diya jata hai*/
+    /* flex-basis: 300px; */
+        /* flex-grow se extra space hata leta hai  */
+    /* flex-grow: 2; */
+        /* flex-grow on rhega ho mix or min width kaam krega */
+    /* max-width: 400px; */
+    /* min-width: 50px; */
+        /* flex-shrink | by defoult 1 hota hai | overflow nhi hota  hai */
+    /* flex-shrink: 1; */
+/* flex shorthand */
+        /* flex-grow | flex-shrink | flex-basis */
+    /* flex: 2 2 300px; */
+        /* flex-grow | flex-basis */
+    /* flex: 2 400px; */
+        /* flex-grow(unitless) */
+    /* flex: 2; */
+        /* flex basis */
+    /* flex: 300px; */
+}
+#container div#blue{
+    width: 50px;
+    height: 50px;
+    font-size: .6em;
+/* flex sizing | main-axis pe used hota hai */
+        /* flex-basis se mian-axis ka maan diya jata hai*/
+    /* flex-basis: 400px; */
+        /* flex-grow se extra space hata leta hai  */
+    /* flex-grow: 1; */
+        /* flex-shrink | by defoult 1 hota hai | overflow nhi hota  hai */
+    /* flex-shrink: 2; */
+}
+h1{
+    text-align: center;
+}
+#container div{
+    height: 100px;
+    width: 100px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.5em;
+}

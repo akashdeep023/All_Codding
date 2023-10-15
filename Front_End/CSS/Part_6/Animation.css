@@ -1,0 +1,85 @@
+.box {
+    height: 100px;
+    width: 300px;
+    background-color: pink;
+    text-align: center;
+    line-height: 100px;
+
+    
+
+            /* Animation property */
+/* animation-name single
+    animation-name: fontAnimation;
+    animation-name: widthAnimation;
+/* animation-name multiple */
+    /* animation-name: fontAnimation, widthAnimation;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 0; */
+/* animation-timing-function used number/infinite */
+    /* animation-iteration-count: infinite; */
+/* animation-direction normal/ reverse/ alternate/ alternate-reverse*/
+    /* animation-direction: alternate; */
+
+/* Animation shorthand property */
+    animation: fontAnimation 4s ease-in 0s infinite alternate;
+
+
+
+}
+
+
+/* Animation template */
+/* Two Stage - from=0% || to=100% */
+/* Many Stage - 0% || 50% || 100% */
+
+/* @keyframes Myname{
+    from{
+        property: value;
+    }
+    to{
+        property: value;
+    }
+} */
+
+/* @keyframes widthAnimation{
+    from{
+        width: 90px;
+    }
+    to{
+        width: 500px;
+    }
+} */
+
+/* @keyframes fontAnimation{
+    from{
+        font-size: 10px;
+        background-color: red;
+        color: yellow;
+        width: 90px;
+    }
+    to{
+        font-size: 40px;
+        background-color: yellow;
+        color: red;
+        border-radius: 50px;
+        width: 500px;
+    }
+} */
+
+/* used % for different stage */
+@keyframes fontAnimation{
+    0%{
+        background-color: yellow;
+    }
+    33%{
+        background-color: green;
+    }
+    66%{
+        background-color: red;
+    }
+    100%{
+        background-color: blue;
+    }
+}
+

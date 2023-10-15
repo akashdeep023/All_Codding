@@ -1,0 +1,45 @@
+/* part-a selectors */
+/* solution 1 to 5 */
+*{
+    text-align: center;
+}
+#mainTopic{
+    color: blue;
+}
+h1,h3,h5{
+    font-family: Georgia;
+}
+.content{
+    background-color: cornflowerblue;
+    color: white;
+}
+div button{
+    background-color: purple;
+    color: azure;
+}
+
+/* part-b pseduo class & elements */
+/* solution 6 to 9 */
+button:hover{
+    background-color: yellow;
+    color: blue;
+}
+p:nth-of-type(2n+1){
+    color: yellow;
+}
+h1::first-letter{
+    color: red;
+}
+/* #yes:checked + label{
+    color: darkgreen;
+} */
+input[type="checkbox"]:checked + label{
+    color: darkgreen;
+}
+
+
+/* order these rules according to their specificity, from least specific to most specific */
+/*  1   #mainContent
+    2   div.main
+    3   .main
+    4   hq      */

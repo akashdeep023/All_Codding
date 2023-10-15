@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid (Layout)</title>
+
+    <!-- bootstrap ka stylesheet link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- external css link -->
+    <link rel="stylesheet" href="Using_Bootstrap.css">
+</head>
+<body>
+    <!-- bootstrap me grid banate time container jarur banaye -->
+    <!-- grid ke 1 row me 12 column hote h -->
+    <div class="container">
+        <h2>Grid (Layout) Bootstrap</h2>
+        <!-- 1 row me jitna col create karege vo equaly divide ho jayege -->
+        <div class="row">
+            <div class="col bg-success">one</div>
+            <div class="col bg-danger">two</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col bg-info">one</div>
+            <div class="col bg-primary">two</div>
+            <div class="col bg-info">two</div>
+        </div>
+        <br>
+        <!-- agar col-x denge to x col lega -->
+        <div class="row">
+            <div class="col-3 bg-info">one</div>
+            <div class="col-6 bg-primary">two</div>
+            <div class="col-3 bg-info">two</div>
+        </div>
+        <br>
+        <!-- col-md-x me jab tak screen md (768px) pe nhi aata vo 100% width lega -->
+        <div class="row">
+            <div class="col-md-3 bg-info">one</div>
+            <div class="col-md-6 bg-primary">two</div>
+            <div class="col-md-3 bg-info">two</div>
+        </div>
+        <br>
+        <!-- col-xl-x me jab tak screen xl (1200px) pe nhi aata vo 100% width lega -->
+        <div class="row">
+            <div class="col-xl-3 bg-info">one</div>
+            <div class="col-xl-6 bg-primary">two</div>
+            <div class="col-xl-3 bg-info">two</div>
+        </div>
+        <br>
+        <!-- col-md-6 me jab tak screen md (768px) pe nhi aata vo 100% width lega 768px hoga to 6 col = 50% width lega-->
+        <!-- col-xl-4 me jab tak screen xl (1200px) pe nhi aata vo col-md-6 (50%-width) width lega 1200px hoga to equaly 3 unit me divided ho jayega  -->
+        <div class="row">
+            <div class="col-md-6 col-xl-4 bg-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum explicabo corporis quas porro eveniet non ratione nam! Molestiae vel tenetur perspiciatis hic? Obcaecati quae optio vitae reprehenderit amet deleniti nesciunt debitis accusantium corrupti commodi. Reiciendis, voluptates nisi eos ut tempore quidem, debitis quam aliquam inventore possimus, et corporis aut excepturi!</div>
+            <div class="col-md-6 col-xl-4 bg-primary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero odit corrupti quod sapiente dignissimos vel consequuntur culpa velit a voluptas, quam et magni ut. Ab quas eius tempore nesciunt atque eveniet ex aliquid! Suscipit eum est ut neque atque ipsum, nam ipsa aut, quam impedit voluptates nisi officia aliquam optio?</div>
+            <div class="col-md-6 col-xl-4 bg-info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae fugiat quas dolorum et soluta dolore incidunt sint fugit laborum expedita quibusdam beatae, ut perferendis sed velit sunt harum esse, explicabo eligendi assumenda facere dicta eos voluptatem! Magnam, corporis possimus! Harum nisi magni quam excepturi. Adipisci enim in praesentium esse quo.</div>
+        </div>
+        <br>
+        <h3>Grid Vertical Alignment</h3>
+        <!-- grid (vertical alignment) -->
+        <!-- used align-items-start/center/end and align-self-start/center/end -->
+        <div class="row align-items-center">
+            <div class="col bg-success align-self-end">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum explicabo corporis quas porro eveniet non ratione nam! Molestiae vel tenetur perspiciatis hic? Obcaecati quae optio vitae reprehenderit amet deleniti nesciunt debitis accusantium corrupti commodi. Reiciendis, voluptates nisi eos ut tempore quidem, debitis quam aliquam inventore possimus, et corporis aut excepturi!</div>
+            <div class="col bg-warning">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sapiente porro odit facilis id a, praesentium consequatur laudantium excepturi! Architecto, quaerat explicabo consectetur ipsa laudantium eligendi doloribus. Temporibus consequatur veritatis labore beatae voluptatem, ad tempora repudiandae quam voluptas maiores odit voluptate natus reprehenderit sapiente nemo sequi repellendus non numquam iure. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero odit corrupti quod sapiente dignissimos vel consequuntur culpa velit a voluptas, quam et magni ut. Ab quas eius tempore nesciunt atque eveniet ex aliquid! Suscipit eum est ut neque atque ipsum, nam ipsa aut, quam impedit voluptates nisi officia aliquam optio?</div>
+            <div class="col bg-danger">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae fugiat quas dolorum et soluta dolore incidunt sint fugit laborum expedita quibusdam beatae, ut perferendis sed velit sunt harum esse, explicabo eligendi assumenda facere dicta eos voluptatem! Magnam, corporis possimus! Harum nisi magni quam excepturi. Adipisci enim in praesentium esse quo.</div>
+            <div class="col bg-secondary align-self-start">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae fugiat quas dolorum et soluta dolore incidunt sint fugit laborum expedita quibusdam beatae, ut perferendis sed velit sunt harum esse, explicabo eligendi assumenda facere dicta eos voluptatem! Magnam, corporis possimus! Harum nisi magni quam excepturi. Adipisci enim in praesentium esse quo.</div>
+        </div>
+
+    </div>
+    
+
+
+    <!-- bootstrap ka javascript link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

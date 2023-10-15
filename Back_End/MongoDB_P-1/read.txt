@@ -1,0 +1,88 @@
+----------------------------------------Mongo------------------------------------------------------
+----------------------------------------------------------------------------------------------
+-----------------------------------The Mongo Shell-----------------------------
+install MongoDB in browser
+start MongoDB service start in command 	-> brew services start mongodb-community@7.0  
+						(ya)
+			   	 	-> sudo brew services start mongodb-community@7.0
+(mongodb and mongo shell ke bin ka path envorment variable ke system path mai add kijiye ...)
+start Mongo shell in command 	-> mongosh
+text> help  			-> show all command in mongosh
+text> show dbs			-> show all databases
+text> exit ya quit		-> exit mongosh
+text> ctrl+L			-> clear screen
+text> 1+2 =3			-> mongo shell javascript ka code recognized karta hia
+text>"akash deep".toUpperCase(); = AKASH DEEP
+		(mongosh me database(text) temporary hota hai jab tak ki usme data insert n kar de)
+text> use college		-> college temporary database hai
+college> db			-> show database name
+		(jab mongosh opne karte hai to text temporary database open milta hai)
+------------------------------BSON Data---------------------------------
+mongodb.com/json-and-bson	->(read document)
+
+------------------------------Document & Collection----------------------
+Document : Mongo stores data in form of documents (BSON docs)	-> (SQL rows)
+Collection : MongoDB stores documents in collections.		-> (SQL table) 
+
+------------------------------InSERT in DB (InsertOne)-------------------------
+mongodb.com/docs/manual/crud/	->(read document CRUD Operations)
+use college	->create db
+show collections	-> show all collection    (eg - sql table)
+-> create student collection and insert document in student collection	(insertOne - insert one docement)(mongo ke document me  key or pair me other key bhi store kar sakte hai)---------
+db.student.insertOne({name:"adam",age: 19,marks: 88})	
+db.collection.find()	-> show all document in collection
+
+
+------------------------------InSERT in DB (insertMany)-------------------------
+-> student exist then no create and insert document in student collection	(insertMany - insert many docement)------
+db.student.insertMany([{name:"catlyn",marks: 64,city: "delhi"},{name:"donald",marks:59,city:"mumbai"}])
+
+---------------------------------FIND in DB------------------------------------
+db.collection.find()                                -> returns everything
+for specific queries-----------------
+db.collection.find({key: value})                    -> return this document (curser - refrence to original)
+db.collection.findOne({key: value})                 -> return one document  (actual document)
+db.collection.find({city:"delhi",name:"catlyn"})    -> multipal arg
+
+---------------------------------Query Operators (FIND in DB)------------------------------------
+mongodb.com/docs/manual/reference/operator/query/       ->(read Query Operators)(Comparison Operators => $eq =,$gt >,$gte >=,$in in,$lt <,$lte <=,$ne !=,$nin !in)
+Find student where marks > 75 -------------
+db.student.find({marks:{$gt:75}})           -> marks > 75
+Find student who live in Delhi or Mumbai -------------
+db.student.find({city:{$in:["delhi","mumbai"]}})        -> city in ("delhi","mumbai")   - case sensative
+Find student who who scored > 75 or live in Delhi -------------
+db.student.find({$or: [{marks: {$gt:75}},{city:"Delhi"}]})      ->logical or
+
+---------------------------------UPDATE in DB------------------------------------
+mongodb.com/docs/manual/reference/update-methods/       ->( read DB update methods)
+mongodb.com/docs/manual/tutorial/update-document-with-aggregation-pipeline/       ->( DB update aggregation)($set, $addFields, $project, $unset, $replaceRoot, $replaceWith)
+db.collection.updateOne(<filter>,<update>,<option>)     ->(update one document that match a specified filter)
+db.student.updateOne({name:"adam"},{$set:{marks:99}})
+db.collection.updateMany(<filter>,<update>,<option>)    ->(update all documents that match a specified filter)
+db.student.updateMany({city:"delhi"},{$set:{city:"new delhi"}})
+db.collection.replaceOne(<filter>,<update>,<option>)    ->(replaces at most a single document that match a specified filter even though multiple documents may match the specified filter)
+db.student.replaceOne({name:"bob"},{name:"akash",marks:95,state:"patna"})   ->(id same)
+
+---------------------------------Nesting------------------------------------
+db.student.insertOne({name:"farah",performance:{marks:88,grade:'A'}})       -> insert document in nested
+db.student.findOne({"performance.marks":88})                                -> find nested document (search key string formate )
+
+---------------------------------DELETE in DB------------------------------------
+deleteOne---------
+db.collection.deleteOne(<filter>,<option>)      -> delete one document that match a specified filter
+deleteMany--------
+db.collection.deleteMany(<filter>,<option>)     -> delete all document that match a specified filter
+db.collection.deleteMany({})                    -> empty collection ya not available any document
+delete Collection--------------
+db.collection.drop()							-> delete collection in DB
+delete Database ---------------
+db.dropDatabase()                               -> use DB delete
+
+
+
+
+
+
+
+
+

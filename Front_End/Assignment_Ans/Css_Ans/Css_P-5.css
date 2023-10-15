@@ -1,0 +1,43 @@
+/* Question no 1 */
+#container{
+    width: 400px;
+    height: 400px;
+    border: 3px solid lightseagreen;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* align-content: space-around; */
+    align-items: center;
+}
+#container div{
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: grey;
+    font-size: 50px;
+    text-align: center;
+}
+/* Question no 2 */
+#navbar{
+    width: 900px;
+    height: 50px;
+    background-color: pink;
+    border: 3px solid lightseagreen;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    /* align-content: center; */
+}
+#navbar div{
+    width: 80px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: 500;
+    margin-left: 5px;
+    line-height: 50px;
+
+}

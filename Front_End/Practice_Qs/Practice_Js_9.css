@@ -1,0 +1,10 @@
+.red{
+    color: red;
+}
+.blue{
+    color: blue;
+}
+.div{                               /* div selection hota to sabhi div pe apply hota  */
+    border: 1px solid black;      /* .div class hai */
+    background-color: pink;
+}

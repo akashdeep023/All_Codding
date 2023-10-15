@@ -1,0 +1,67 @@
+/* Relative Unit percentage used */
+/* percentage  hai jo relative to the parent */
+
+/* h1 ka parent hai body tag isi liye body ka 50% width h1 ka hoga */
+h1{
+    width: 50%;
+    border: 2px solid black;
+}
+.outer{
+    height: 300px;
+    width: 500px;
+    background-color: orange;
+    margin: 50px;
+}
+.inner{
+    height: 100px;
+    width: 100px;
+    background-color: cornflowerblue;
+    /* inner ka parent outer hai isi liye inner ka margin-left parent ka 10% = 50px hoga */
+    margin-left: 10%;
+}
+
+/* Relative Unit em used */
+/* ex-1 */
+.outerR{
+    height: 400px;
+    width: 400px;
+    border: 2px solid black;
+    background-color: pink;
+    font-size: 10px;
+}
+.innerR{
+    height: 100px;
+    width: 100px;
+    background-color: cornflowerblue;
+    font-size: 3em; /* font ka relative parent hota  hai parent ka font-size = 10px hai to 1em = 10px | 2em = 20px | 3em = 30px h */
+    padding: 1em;   /* padding or margin ka relative parent nhi hota hai uske font hi hota hai 30px ka 1em 30px hi hoga */
+    margin-left: 1em;
+}
+
+/* ex-2 */
+button{
+    font-size: 50px;
+    border: 5px solid green;
+    border-radius: 15px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+/* Relative Unit rem used */
+
+/* em ka used sirf a>b me karte hai agar a>b>c>d me ho to a ka font-size=10px to b=20px | c=40px | d=80px  */
+/* div{
+    font-size: 2em;     
+} */
+
+
+section{
+    font-size: 20px;
+}
+div{
+    font-size: 2rem;
+}
+
+
+
+
+

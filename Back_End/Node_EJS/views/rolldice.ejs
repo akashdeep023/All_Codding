@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll Dice</title>
+</head>
+<body>
+    <!-- ------------------Passing data to EJS----------------------- -->
+    <!-- <h1>Dice gave value :  <%= Math.floor(Math.random()*6)+1 %></h1> -->
+    <!-- num database se aa rah aisa mante hai -->
+    <!-- <h1>Dice gave value :  <%= //num %></h1> -->   
+    <h1>Dice gave value :  <%= diceVal %></h1>
+
+    <!-- ----------------------Conditional Statements----------------- -->
+    <!-- in js formate
+        if(diceVal==6){
+            <h2> Nice! Roll dice again. </h2>
+        }
+     -->
+    <!-- in ejs formate -->
+    <!-- sirf js ko likha jata hai  -->
+    <% if(diceVal==6){ %>
+        <h2> Nice! Roll dice again. </h2>    <!-- html ko nhi -->
+    <% } %>
+
+    <!-- include footer  -->
+    <%- include("include/footer.ejs") %>
+
+</body>
+</html>

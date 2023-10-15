@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+</head>
+<style>
+    tr,td{
+        border: 1px solid blue; 
+    }
+    td{
+        color: blue;
+    }
+    table{
+        border: 1px solid red;        
+    }
+    th{
+        font-weight: 800;
+        border: 1px solid red;
+        color: red;        
+    }
+    button{
+        color: white;
+        background-color: blue;
+        border: none;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <table> 
+        <div style="display: inline-flex;">       
+            <form method="get" action="/">
+                <button style="border: 3px solid red; color: blue; background-color: yellow;" >GO TO HOME!</button> &nbsp; &nbsp;
+            </form>        
+            <form method="get" action="/user/add">
+                <button style="border: 3px solid red; color: blue; background-color: yellow;" >ADD NEW USER!</button><br><br>
+            </form>
+        </div>       
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>        
+        <% for (const user of users) { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.email %></td>
+                <td><%= user.username%></td>
+                <form method="get" action="/user/<%= user.id %>/edit">
+                    <td><button>Edit Username</button></td>
+                </form>
+                <form method="get" action="/user/<%= user.id %>/delete">
+                    <td><button>Delete Account</button></td>
+                </form>
+            </tr>
+        <% } %>
+
+    </table>
+</body>
+</html>

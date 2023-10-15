@@ -1,0 +1,63 @@
+/* container ka display-grid hai to sirf container ka direct chaild hi grid-item hoga */
+.container{
+    width: 600px;
+    height: 300px;
+    background-color: rgb(2, 213, 251);
+    /* display: grid; */
+    display: inline-grid;
+    /* grid lines= row ya coloum || grid cell= particular item || grid track= two line ke bich ka space */
+/* grid template */
+    /* grid-template-rows se row create hota hai */
+    /* grid-template-rows: 50px 50px 50px 50px 50px; */
+    /* grid-template-column se columns create hota hai */
+    /* grid-template-columns: 200px 200px 200px ; */
+    /* ---------secound method me hum (auto se 1 column) || (auto auto se 2 equal column) create hote h || lekin jada use nhi hota hai */
+    /* grid-template-columns: auto auto auto; */
+    /* ---------repeat(count, 1fr) (1fr- 1 fraction of 100% ablable space */
+    grid-template-rows: repeat(3, 1fr);
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    grid-template-columns: 1fr 1fr 1fr;
+/* grid gaps */
+    /* row-gap: 10px; */
+    /* column-gap: 20px; */
+    /* ---------grid-gap se row or column me gap hota h */
+    /* grid-gap: 10px; */
+    grid-gap: 10px 20px;
+/* grid-column  used particular element*/
+/* grid-row used particular element */
+
+/* justify-items horizontal || align-items vertical || used container */
+/* start || end || center */
+    /* justify-items: center; */
+    /* align-items: center; */
+/* place-items || horizontal and vertical same property */
+    place-items: center;
+}
+.item{
+    width: 100px;
+    height: 50px;
+    background-color: greenyellow;
+    border: 2px solid black;
+    text-align: center;
+}
+.one{
+/* grid column */
+/* starting line or ending line || ya line  1 ke baad 2 cell */
+    /* grid-column-start: 1; */
+    /* grid-column-end: 3 ; */
+    /* grid-column: 1/span 2; */
+/* justify-self horizontal || align-self vertical || used self element */
+    /* justify-self: end; */
+    /* align-self: end; */
+/* place-self || horizontal and vertical same property */
+    place-self: start;
+
+}
+.two{
+/* grid row */
+    /* grid-row-start: 2; */
+    /* grid-row-end: 4; */
+    /* grid-row: 2/4 ; */
+    grid-row: 2 /span 2;
+
+}

@@ -1,0 +1,142 @@
+/* selector{
+    properties: value;
+} */
+
+/* universal selectoor */
+*{
+    font-family:'Courier New';
+}
+
+/* element selector */
+h3,h1{
+    color: #b92b27;
+}
+
+/* id selector */
+#login{
+    background-color: white;
+}
+#signup{
+    background-color: #b92b27;
+    color: white;
+}
+
+/* class selector */
+.upvote{
+    background-color: green;
+    color: antiquewhite;
+}
+
+/* descendant selector */
+/* p a{
+    color: purple;
+    background-color: yellow;
+} */
+.post a{
+    color: purple;
+    background-color: yellow;
+}
+/* nav ul li a {
+    color: pink;
+} */
+nav a{
+    color: pink;
+}
+
+/* sibiling combinator */
+/* isme p+h3 hum h3 ko select kar rhe hai jo p tag ke baad me hai */
+p+h3{
+    text-decoration: underline;
+}
+.upvote + button{
+    background-color: blueviolet;
+}
+
+/* child combinator */
+div>input{
+    /* color: aqua; */
+    background-color: burlywood;
+}
+
+/* attribute selector */
+/* input[type]{
+    color: red;
+} */
+input[type="text"]{
+    color: green;
+}
+input[type="password"]{
+    color: blue;
+}
+
+/* practice Qs */
+/* nichhe ke dono selector  ak hi hai */
+#myId p{
+    color: blue;
+}
+div[id="myId"] p{
+    background-color: red;
+}
+
+/* pseudo class */
+/* :hover | :active | :checked | :nth-of-type  */
+/* :hover */
+button:hover{
+    background-color: black;
+    color: white;
+}
+h3:hover{
+    text-decoration: overline;
+}
+/* :active */
+button:active{
+    background-color: pink;
+    color: blue;
+}
+p:active{
+    font-weight: bold;
+    color: green;
+}
+/* :checked */
+input[type="radio"]:checked + label{
+    color: red;
+    font-weight: bold;
+}
+/* :nth-of-type() */
+/* 1 ka matlab div no 1 me |or 2 ka matlab div no 2 me| isi tarah 1n ka matlab sabhi me | or 2n ka matlab even me | or 2n+1 ka matlab odd me */
+div:nth-of-type(2n+1){
+    background-color: wheat;
+}
+
+/* pseudo element */
+/* ::first-letter | ::first-line | ::selection */
+h1::first-letter{
+    color: blue;
+}
+p.para::first-line{
+    color: red;
+}
+p.para::selection{
+    background-color: yellow;
+}
+
+/* cascading properties */
+/* same selector aaye to last wala used hota hai */
+/* or jo css file last me or same selector ho to uski priority sabse jada hoti hai */
+h3{
+    background-color: green;
+}
+h3{
+    background-color: blue;
+}
+/* selector specificity */
+/* priority = inline css > id > class > element */
+/* specificity => inline css - 1000 | id - 100 | class - 10 | element - 1 */
+/* more selector > less selector */
+/* if specificity same = cascading properties checked */
+
+/* important in css */
+/* kisi selector me !important likha to uski priority sabse aadhik hogi  */
+h3{
+    background-color: lightblue !important;
+}

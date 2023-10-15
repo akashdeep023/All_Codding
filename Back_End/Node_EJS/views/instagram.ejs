@@ -1,0 +1,58 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+</head> -->
+
+<!-- -----------------include-------------------------- -->
+<!-- include sub file -->
+<%- include("include/head.ejs") %>
+<!-- <style>
+    img{
+        height: 200px;
+        width: 200px;
+    }
+</style> -->
+<!-- ---------------Serving Static Files------------------- -->
+<!-- css file ko hum pura path nhi dete hai kyo ki index.js me dified kiye hai ki static file public folder me hoga   -->
+<!-- ejs direct public folder ke file ko access kar lega -->
+<!-- <link rel="stylesheet" href="/style.css">  --> 
+<!-- css link include on head.ejs -->
+
+
+<body>
+    <!-- -----------------------Instagram EJS----------------------- -->
+    <!-- <h2>This page belongs to @<%= //username %> </h2> 
+        <button>Follow</button>
+        <button>Massage</button>
+    -->
+    
+    <!-- ----------------------------loop---------------------------- -->
+    <!-- <h3>Account that follow you : </h3>
+    <ul>
+        <% //for(let name of followers){ %>
+            <li><%=// name %></li>
+        <%// } %>
+    </ul> -->
+    <!-- -----------------------Instagram page width EJS----------------------- -->
+    <h2>This page belongs to @<%= data.name %> </h2>
+    <button>Follow</button>
+    <button>Massage</button>
+
+    <p>Followers : <%= data.followers %> &nbsp;&nbsp;&nbsp;&nbsp;Following : <%= data.following %></p>
+    <hr>
+    <% for(let post of data.posts){ %>
+        <img src=" <%= post.image %> " alt="some image">
+        <p>Likes : <%= post.likes %> &nbsp;&nbsp;&nbsp;&nbsp;Comments : <%= post.comments %></p>
+    <% } %>
+
+    <!-- include footer  -->
+    <%- include("include/footer.ejs") %>
+
+    <!-- ---------------Serving Static Files------------------- -->
+    <!-- ejs direct public folder ke file ko access kar lega -->
+    <script src="/app.js"></script> 
+</body>
+</html>

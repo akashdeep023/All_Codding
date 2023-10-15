@@ -1,0 +1,46 @@
+/* Example 1 display- block or inline------------------- */
+.head{
+    background-color: lightpink;
+    /* div block element ko display property se inline element me badle */
+    display: inline;
+}
+.span{
+    background-color: lightgreen;
+    /* span inline element ko display property se block element me badle */
+    display: block;
+}
+
+/* Example 2 display- block or inline me diffirent --------------------- */
+/* inline element me sirf height or width se koi fark nhi parta hai */
+.inline{
+    background-color: rgba(135, 206, 250, 0.915);
+    border: 2px solid red;
+    height: 100px;       /* x */
+    width: 200px;        /* x */
+    padding: 50px;
+    margin: 30px;
+
+}
+.divelem{
+    background-color: rgba(135, 206, 250, 0.915);
+    border: 2px solid red;
+    height: 100px;
+    width: 200px;
+    padding: 50px;
+    margin: 30px;
+}
+/* Example 3 display- inline-block  ------------------------- */
+/* div ko display- inline me badla jata hai to uska height or width nhi rhata hai ise liye div ka property lose n ho isi liye div ko inline me badlne ke liye use inline-block me badal diya jata hai jisse uska property lose n ho */
+div.ex3{
+    height: 200px;
+    width: 200px;
+    background-color: greenyellow;
+    border: 2px solid black;
+    margin: 5px;
+    display: inline-block;
+}
+
+/* kisi ko display n dikhane ke liye use display none kiya jata hai */
+#third{
+    display: none;
+}

@@ -1,0 +1,316 @@
+<!DOCTYPE html>     <!-- boilerplate code -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html</title>
+</head>
+<body>
+    <hr>--------------------Html level-1 part-A. ----------------------<hr>
+
+    <!-- <p> ye opening tag hai.|| </p> ye closing tag hai || pura Element hai-->
+    <p>p is a paragraph tag. <b>b is a bold tag</b></p> <!-- p tag ke andar b tag =nested tag -->
+    <h1>h1 is a large heading tag.</h1>
+    <h2>h2 is a heading tag.</h2>
+    <h3>h3 is a heading tag.</h3>
+    <h4>h4 is a heading tag.</h4>
+    <h5>h5 is a heading tag.</h5>
+    <h6>h6 is a smole heading tag.</h6>
+
+    <hr>--------------------Html level-1 part-B. ----------------------<hr>
+    <ul>    <!-- ul is unorder list -->
+        <li>Mango</li>  <!-- li is list -->
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Grapes</li>
+        <li>Coconut</li>
+    </ul>
+    <ol type="A">    <!-- ol is order list or type is a attributes -->
+        <li>Mango</li>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Grapes</li>
+        <li>Coconut</li>
+    </ol>
+
+    <a href="https://www.google.com">Google</a>  <br>       <!-- a is a anchor tag or href is attributes -->
+    <a href="https://www.netflix.com/in/">Netflix</a>   <!-- link 2 type ke hote h 1. absolute link ke andar internet ka link or 2. relative link ke andar apna file link likhte hia || yaha pe absolute link hai -->
+
+    <img src="ironman.jpeg" alt="ironman 1 image" width="200px">  <!-- img is a image tag or src = source ya link or alt = alternate name || src and alt is attributes || yaha pe relative link hai-->
+    <img src="https://qph.cf2.quoracdn.net/main-qimg-6845c8b6f116ba48144344a58cd7e463" alt="ironman 2 image" width="150px">     <!-- yaha pe absolute link hai -->
+
+
+    <p>Twinkle twinkle little star how i wonder what you are</p>
+    <p>Twinkle twinkle <br> little star <br> how i wonder <br> what you are</p> <!-- br is a line breck tag start next line -->
+
+    <b> bold</b> <!-- b is a bold tag -->
+    <i> italic</i>  <!-- i is a italic tag -->
+    <u> underline</u>   <!-- u is a underline tag-->
+
+    <!-- html is a non case sensative language | tag small ho ya capital ho no change -->
+    <!-- Ex -->
+    <p> html non case sensative</p>
+    <P>html non case sensative</P>
+
+    <hr>--------------------Html level-2. ----------------------<hr>
+    
+    <!-- Block element or Inline element -->
+    <h1>h1 tag block element</h1>      <!-- h1 or p tag block element hai-->
+    <p>p tag block element</p>
+    <a href="https://www.google.com">Google</a>     <!-- a or img tag inline element hai-->
+    <img src="https://media.istockphoto.com/id/184276818/photo/red-apple.jpg?s=612x612&w=0&k=20&c=NvO-bLsG0DJ_7Ii8SSVoKLurzjmV0Qi4eGfn6nW3l5w=" alt="Apple" width="150px">
+    
+    <!-- div block element hai jo group karne ke kaam aata hai-->
+    <!-- Ex -->
+    <div>
+        <p>div block element hai</p>
+        <a href="https://www.instagram.com">Instagram</a>
+        <a href="https://www.facebook.com">Facebook</a>
+    </div>
+    <a href="https://www.youtube.com">Youtube</a>
+
+    <!-- span inline element hai jo group karne ke kaam aata hai-->
+    <!-- Ex -->
+    <span>
+        <p>span inline element hai</p>
+        <a href="https://www.instagram.com">Instagram</a>
+        <a href="https://www.facebook.com">Facebook</a>
+    </span>
+    <a href="https://www.youtube.com">Youtube</a>
+
+    <!-- hr tag horizantal line ke liye kiya jata hai-->
+    <hr>
+    <p>This is a website</p>
+    <hr>
+    <!-- sup = superscript or sub = subscript hota hai-->
+    <!--Ex-- -->
+    <h3>A<sup>2</sup></h3>  <!-- yaha pe sup nested tag hai kyo ki ye h3 tag ke andar hai | h3 ko parent or sup ko child kahte hai-->
+    <h3>H<sub>2</sub>O</h3>
+
+    <!-- Semantic tag jo meaning deta hai Ex = h1,p,a,header,etc or Non semantic tag jo meaning nhi deta hai Ex = div,span,etc -->
+
+    <p>Semantic tag likha jata hai jisse browser ko read karne me aasani ho</p>
+    <!-- Semantic tag me - header tag, main tag, footer tag, nav tag, article tag, section tag, aside tag aate hai -->
+    <header>Akash deep
+        <nav>
+            <ul>
+                <li> <a href="/about.html">About us</a></li>
+                <li> <a href="/login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h4>hello world</h4>
+        <p> This is a portfolio website </p>
+        
+    </main>
+    <footer>
+        <p>&copy;2023</p>
+        <a href="/contact.xyz">Contact me</a>
+    </footer>
+
+    <!-- Html Entities jo "& = ampersand" se start or "; = semi-colon" se end hota hai-->
+    <!-- a>b -->
+    <p>a>b</p>      <!-- ye sahi nhi hai -->
+    <p>a<b</p>      <!-- ye sahi nhi hai -->
+    <p>a&gt;b&nbsp;&nbsp;b&lt;a</p>   <!-- > = &gt; | or < = &lt; | space = &nbsp; -->
+
+    <hr>--------------------Html level-3. ----------------------<hr>
+    <!-- table me table>caption+(tr>th*2)+(tr>td*2)*3-->
+
+    <!-- table semantic = thead, tbody, tfoot -->
+    
+    <table border="black">
+        <caption>Fruits Menu</caption>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Apple</td>
+                <td>120/-</td>
+            </tr>
+            <tr>
+                <td>Orange</td>
+                <td>80/-</td>
+            </tr>
+            <tr>
+                <td>Banana</td>
+                <td>150/-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- colspan or rowspan table ka attributes hai jan koi sell 2 row ya 2 col leta hai to used karte hai-->
+    
+    <table border="black">
+        <caption>Food Menu</caption>
+        <thead>
+            <tr>
+                <th rowspan="2">Item</th>
+                <th colspan="2">Price</th>
+            </tr>
+            <tr>
+                <th>INR</th>
+                <th>USD</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Frooti</td>
+                <td>10</td>
+                <td>0.14</td>
+            </tr>
+            <tr>
+                <td>Samosa</td>
+                <td>12</td>
+                <td>0.17</td>
+            </tr>
+            <tr>
+                <td>Chips</td>
+                <td>20</td>
+                <td>0.28</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr><hr>
+
+    <!-- Forms in Html -->
+    <!-- Form me input tag ka used hota hai jo type attributes used krte hai -->
+    <form action="action">
+        Username
+        <input type="text">
+        <br>
+        Password
+        <input type="password">
+        <br>
+        Date
+        <input type="date">
+        <br>
+        Time
+        <input type="time">
+        <br>
+        Number
+        <input type="number">
+        <br>
+        Color
+        <input type="color">
+        <br>
+    </form>
+    <hr><hr>
+    <!-- placeholder ko input box me ye batane ke liye kiya jata hai hai ki vo kiska input karna hai -->
+    <!-- label ko Name or input tag ko ak sath connect karne ke liye kiya jata hai -->
+    <form action="action">
+        <label>
+            Username :
+            <input type="text" placeholder="Enter Username">
+        </label>
+        <br>
+        <label>
+            Password :
+            <input type="password" placeholder="Enter Password">
+        </label>        
+    </form>
+    <hr><hr>
+    <!-- label ko for attributes or input tag ko id attributes se bhi connect krte hai -->
+    <form action="/action1">
+        <div>
+            <label for="Username">Username :</label>
+            <input type="text" placeholder="Enter Username" id="Username">
+        </div>
+        <div>
+            <label for="Password">Password :</label>
+            <input type="password" placeholder="Enter Password" id="Password">
+        </div>
+        <div>
+            <label for="Age">Age :</label>
+            <input type="number" placeholder="Enter Age" id="Age">
+        </div>
+        <!-- button element ex- submit -->
+        <button>Submit</button>     <!-- button tag ke used se bhi by defoult submit hi hota hai-->
+        <!-- button me bhi attributes hota hai ex- submit, button, reset -->
+        <button type="submit">Submit</button>
+        <button type="button">Hello</button>
+        <button type="reset">reset</button>
+        <hr>
+        <!-- input se bhi hum button used kar sakte hai | lekin ye sahi tarika nhi hai -->
+        <input type="button" value="click me">
+        <input type="submit" value="click me 2"> <!-- value nhi dene par by defoult submit hi likha aayega-->
+    </form>
+    <!-- Form me name attrinute hote hai jo batata hai ki kya value enter kar rhe hai name = value -->
+    <hr><hr>
+    <form action="server">
+        <div><label for="username">Username</label>
+            <input type="text" name="user" id="username" placeholder="Enter Username">
+        </div>
+        <div><label for="password">Password</label>
+            <input type="password" name="pass" id="password" placeholder="Enter password">
+        </div>
+        <div><label for="age">age</label>
+            <input type="number" name="age" id="age" placeholder="Enter age">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <hr><hr>
+    <!-- Search in youtube -->
+    Search in youtube--
+    <form action="https://www.youtube.com/results">
+        <input type="search" name="search_query" id="search" placeholder="Search in Youtube">
+        <button>Search</button>
+    </form>
+    <hr><hr>
+    <!-- form ke input tag me checkbox attribute used -->
+    <form action="serverk">
+        <input type="checkbox" name="age" id="age1" value="18+" checked>    <!-- checked attrinute se by defoult checked ho jata hai-->
+        <label for="age1">I am 18+</label>
+        <div>           <!-- group karne ke liye name ak hi rakhege -->
+            Choose your subjects:
+            <input type="checkbox" name="sub" id="math" value="math">
+            <label for="math">math</label>
+            <input type="checkbox" name="sub" id="sci" value="sci">
+            <label for="sci">science</label>
+            <input type="checkbox" name="sub" id="eng" value="eng">
+            <label for="eng">english</label>
+        </div>
+        <!-- form ke input tag me radio attribute used -->
+        <div>
+            Select item to eat.
+            <input type="radio" name="fruit" id="apple" value="apple">
+            <label for="apple">Apple</label>
+            <input type="radio" name="fruit" id="mango" value="mango">
+            <label for="mango">Mango</label>
+            <input type="radio" name="fruit" id="banana" value="banana">
+            <label for="banana">Banana</label>
+        </div>
+        <!-- form me select tag ka used nested tag option -->
+        <div>
+            Choose your profession:
+            <select name="profession" id="profession">
+                <option>--Select your option--</option>
+                <option value="stu" selected >Student</option>  <!-- select>option me selected attribute ka used se vo pahle se hi select hota hai-->
+                <option value="dev">Developer</option>
+            </select>
+        </div>
+        <!-- form ke input tag me range attribute used -->
+        <div>
+            <label for="vol">Select your volume level:</label>
+            <input type="range" id="vol" name="vol" min="0" max="100" step="10" value="80" >    
+            <!-- min or max attributes range difine karta hai or step attribute step or value attribute predifine value -->
+        </div>   
+        <!-- form me textarea tag used or attribute rows & cols -->
+        <div>
+            <label for="feedback">Please give your valuable feedback:</label>
+            <textarea name="feedback" id="feedback" cols="20" rows="4" placeholder="write your feedback"></textarea>
+        </div>
+        <button>Submit</button>
+    </form>
+
+
+
+
+</body>
+</html>

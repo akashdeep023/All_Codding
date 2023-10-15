@@ -1,0 +1,245 @@
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------Part-1------------------------------------------------------
+-----------------------------What is a Database----------------------
+MySQL -> Database
+SQL -> Language (DBMS)
+dev -> SQL -> MySQL
+=> It is a collection of data in a format that can be easily accessed.
+Why use Database?
+    * can store large data
+    * features like security, scalability etc.
+    * Easier to insert, update or delete data
+CRUD -> json or array (X) || Database (✓)
+
+-----------------------------SQL v/s NoSQL----------------------
+SQL---------------
+Relational Database (data stored in Tables(Relation))   eg - MYSQL,Oracle, PostgreSQL etc.
+NoSQL----------------
+Non Relational Database (data stored in document/key-val/graphs etc.)   eg - MongoDb, Cassandra, Neo4j etc.
+MERN Stack -> MongoDb, Express, React.js, Node.js
+MEAN Stack -> MongoDb, Express, Angular, Node.js
+
+-----------------------------What is SQL?----------------------
+=> SQL is a programming language used to interact with Relational Database.  
+(HTML - structure, CSS - style, JS - functionality)
+Database(table1,table2,.......)
+
+-----------------------------What is a Table?----------------------
+eg - just like excel sheet table - MySQL.xlsx file
+columns -> (schema) design (id, name, email, followers, following)
+rows -> tuple   (user detail)
+
+-----------------------------Installation(For Windows)----------------------
+installing process -> mysql.com -> download -> scroll and click MySQL Community Downloads -> click MySQL Installer for Windows
+
+-----------------------------Our First Database----------------------
+Open MySQL Workbench -> create MySQL Connections (click plus icon) enter - name, SQL password  and Text conndetion 
+Double click on connection
+
+select command and run and repeat all command selet and run --------
+
+CREATE DATABASE db_name;    (create)    a semicoloun (;) is placed at the end of every command 
+DROP DATABASE db_name;      (delete)    SQL case insensitive hoti hai(CREATE DATABASE / create database)
+USE db_name;                (use table)
+
+-----------------------------Our First Table----------------------
+CREATE TABLE table_name(                           -> (difine schema (disign columns))
+    column_name1 datatype constraint,
+    column_name2 datatype constraint,
+    column_name3 datatype constraint
+);
+
+INSERT INTO table_name                     -> (insert value to table)
+VALUES
+(101,"adam", 12),
+(102,"bob", 14);
+
+SELECT * FROM table_name;                   -> (seen table)
+
+Basic understand to uper side -----------
+-----------------------------Database Queries----------------------
+create database db_name;
+create database if not exists db_name;      ->(use to create database is not exist then create db)
+
+drop database db_name;
+drop database if exists db_name;            ->(use to delete database is exist then delete)
+
+show database;                              ->(show all database this command);
+show table;                                 ->(use db_name command then use this command and show db_name table)
+
+-----------------------------CREATE Table----------------------
+(create, insert, update, alter, truncate, delete)-------
+create table -------------------
+create table table_name(
+    column_name1 database constraint,
+    column_name2 database constraint,
+);
+read data type in screenshot/SQL_p1 folder----
+
+-----------------------------DELETE Table----------------------
+delete table------------------------
+drop table table_name;
+
+-----------------------------What are Constraints?----------------------
+Rules for data in the table------
+not null        -> column cannot have a null value (eg - name varchar(30) not null )
+unique          -> all values in column are different (eg - email varchar(50) unique )
+default         -> sets the default value of a column (eg - followers int default 0 )
+check           -> it can limit the values allowed in a column (eg - age int, constraint check (age >= 13) ya (age >= 13 and city = "delhi") ) 
+
+-----------------------------Key Constraints----------------------
+primary key - makes a column unique & not null but used only for one 
+    eg - create table temp(
+        id int not unll,
+        primary key (id)
+    );
+
+foreign key prevent actions that would destroy links between tables
+    eg - create table temp(
+        cust_id int,
+        foreign key (cust_id) reference customer(id)           
+    );
+
+-----------------------------Primary & Foreign Keys----------------------
+Keys are special columns in the table--
+Primary Key ---------------
+It is a column (or set of columns) in a table that uniquely identifies each row. (a unique id)
+There is only 1 PK & it should be NOT null.
+
+Foreign Key ----------------
+A foreign key is a column (or set of columns) in a table that refers to the primary key in other
+FKs can have duplicate & null values.
+There can be multiple FKs.
+
+-----------------------------INSERT into Table----------------------
+Table Queries --------------
+insert into table_name(colname1, colname2);
+values
+(col1_v1, col2_v1)
+(col1_v2, col2_v2);
+
+-----------------------------SELECT Command----------------------
+Select & Show data from the DB
+Syntax------
+select col1,col2 from table_name;
+
+Syntax (to show all)
+select * from table_name;           (* -> all)
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------Part-2------------------------------------------------------
+-----------------------------Where Clause----------------------
+To define some conditions-----------
+select col1, col2 from table_name
+where conditions;
+
+-----------------------------Operators Where Clause----------------------
+Arithmetic Operators : +(addtion), -(subtration), *(multiplication), /(division), %(modulus)
+Comparison Operators : =(equal to), !=(not equal to), >, >=, <, <=
+Logical Operators : AND, OR, NOT, IN, BETWEEN, ALL, LIKE, ANY
+Bitwise Operators : &(bitwise AND), |(bitwise OR)
+
+-----------------------------Frequently Used Operators----------------------
+Where clause --- Logical Operators -----------------
+AND (to check for both conditions to be true)
+OR (to check for one of the conditions to be true)
+BETWEEN (selects for a given range)
+IN (matches any value in the list)
+NOT (to negate the given condition)
+
+-----------------------------Limit Clause----------------------
+Sets an upper limit on number of (tuples) rows to be returned----------
+select col1, col2 from table_name
+limit number;
+
+-----------------------------Order By Clause----------------------
+To sort in ascending (ASC) or descending order (DESC)------
+select col1, col2 from table_name
+order by col_name(s) ASC;               => ASC ya DESC ya non(kuch nhi me ASC) 
+
+-----------------------------Aggregate Functions----------------------
+Aggregate Functions perform a calculation on a set of value, and return a single value-----------
+COUNT(col_name)     =>total count display in col_name
+MAX(col_name)       =>max display in col_name
+MIN(col_name)       =>min display in col_name
+SUM(col_name)       =>sum
+AVG(col_name)       =>
+
+Example: select max(marks) from student;
+
+-----------------------------Group By Clause----------------------
+Groups rows that have the some values into summary rows.
+It collects data from multiple records and groups the result by one or more column.
+select col1,col2 from table_name            =>(only contable - group || eg- name ,content or other not allow )
+group by col_name(s);
+
+*Geneally we use group by with some aggregation Function.
+
+-----------------------------Having Clause----------------------
+Similar to Where i.e.applies some condition on rows.
+But it is used when we want to apply any condition after grouping.
+select col1,col2 from table_name 
+group by col_name(s)
+having condition;
+
+*WHERE is for the table, HAVING is for a group
+*grouping is necessary for HAVING
+
+-----------------------------General Order----------------------
+SELECT column(s)
+FROM table_name
+WHERE condition
+GROUP BY column(s)
+HAVING condition
+ORDER BY column(s) ASC;
+
+-----------------------------UPDATE Table----------------------
+Update (to update existing rows)---------------
+set sql_safe_updates = 0;       =>(error then run command to update)
+
+update table_name
+set col1 = val1,co2 = val2
+where condition;
+
+-----------------------------Delete Table (row)----------------------
+Table Queries---------------------
+Delete (to delete existing rows)----------
+delete from table_name
+where condition;                    =>(delete me use where condition onther wise delete all rows)
+
+-----------------------------ALTER Table----------------------
+Table Queries--------------------
+Alter (to change the schema(column))-------
+ADD column---------
+ALTER TABLE table_name
+ADD COLUMN  column_name datatype constraint;
+
+DROP column----------(delete)
+ALTER TABLE table_name
+DROP COLUMN column_name;
+
+RENAME Table---------
+ALTER TABLE table_name
+RENAME TO new_table_name;
+
+CHANGE Column----------
+ALTER TABLE table_name
+CHANGE COLUMN old_name new_name new_datatype new_constraint;
+
+MODIFY Column (modify datatype/constraint)--------------
+ALTER TABLE table_name
+MODIFY col_name new_datatype new_constraint;
+
+-----------------------------TRUNCATE Table----------------------
+Table Queries--------------------
+truncate ( to delete table's data)
+TRUNCATE TABLE table_name;                  =>(delete table data only not table)
+
+DROP TABLE table_name;                      =>(delete table);
+
+-----------------------------Practice Qs1----------------------
+-----------------------------Practice Qs2----------------------
+
+
+
+
