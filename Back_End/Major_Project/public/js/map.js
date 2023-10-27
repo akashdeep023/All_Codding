@@ -13,5 +13,5 @@ const map = new mapboxgl.Map({
 // console.log(coordinates);           //show.ejs ke script se coordinates
 const marker1 = new mapboxgl.Marker({color: 'red'})     //add marker in map
 .setLngLat(listing.geometry.coordinates)       //Listing.geometry.coordinates
-.setPopup(new mapboxgl.Popup({offset: 25}).setHTML(`<h3>${listing.title}</h3><p><b>${listing.location}, ${listing.country}</b></p><p>Exact location will be provided after booking!</p>`))      //add popup in marker
+.setPopup(new mapboxgl.Popup({offset: 25}).setHTML(`<h5>${listing.title}</h5><p><b>${listing.location}, ${listing.country}</b></p><p>Exact location will be provided after booking!</p>`))      //add popup in marker
 .addTo(map);
