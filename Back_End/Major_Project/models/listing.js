@@ -8,12 +8,16 @@ const listingSchema = new Schema({
         required: true,
     },
     description: String,
-    image: {                    //image download in unsplash.com
-        type: String,           //turnory operator same if else operator
-        default: "https://images.unsplash.com/photo-1615874694520-474822394e73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG9tZSUyMGRlY29yfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-        set: (v)=> v === "" 
-        ? "https://images.unsplash.com/photo-1615874694520-474822394e73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG9tZSUyMGRlY29yfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" 
-        : v,                
+    // image: {                    //image download in unsplash.com
+    //     type: String,           //turnory operator same if else operator
+    //     default: "https://images.unsplash.com/photo-1615874694520-474822394e73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG9tZSUyMGRlY29yfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+    //     set: (v)=> v === "" 
+    //     ? "https://images.unsplash.com/photo-1615874694520-474822394e73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG9tZSUyMGRlY29yfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" 
+    //     : v,                
+    // },
+    image: {
+        url: String,
+        filename: String
     },
     price: Number,
     location: String,
@@ -24,6 +28,22 @@ const listingSchema = new Schema({
             ref: "Review",
         }
     ],
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    },
+    geometry: {
+        type: {
+          type: String, // Don't do `{ location: { type: String } }`
+          enum: ['Point'], // 'location.type' must be 'Point'
+          required: true
+        },
+        coordinates: {
+          type: [Number],
+          required: true
+        }
+    }    
+
 })
 
 //Handling Delete Listing-----------------------------

@@ -28,7 +28,7 @@
 //----------------------------------Export in Files--------------------------------------------------
 //requiring files---
 //require() : a built-n function to include external modules that exist in separate files----
-//module.export = fnx ya some : a special object----
+//module.exports = fnx ya some : a special object----
 // const math = require("./math");         //math.js file module.exports ya exports (Export) kar rha hai jise script.js file require kiya
 // // console.log(math);                   //No exports but require file then print {} (emmpty object)
 // console.log(math.sum(3,6));

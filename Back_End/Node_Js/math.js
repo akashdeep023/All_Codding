@@ -5,7 +5,7 @@
 // const g = 9.8;
 // const PI = 3.14;
 
-// module.exports = "hello";     //exports ot other file
+// module.exports = "hello";     //exports to other file
 // module.exports -> exports object
 
 // let obj = {     

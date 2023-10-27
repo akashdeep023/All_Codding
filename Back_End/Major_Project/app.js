@@ -1,4 +1,10 @@
 //----------------------------------------------Basic Set up----------------------------------------------
+if(process.env.NODE_ENV != "production"){       //this is use only production face not 
+    require('dotenv').config();     //require env   || dotenv package in npm
+    // console.log(process.env);
+    // console.log(process.env.SECRET);
+}
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -11,14 +17,37 @@ const ExpressError = require("./utils/ExpressError.js")     //Custome error hand
 // const {listingSchema,reviewSchema} = require("./schema.js") //require joi listing/review schema (server error)
 // const Review = require("./models/review.js");               //require Review model
 
-const listings = require("./routers/listing.js")        //resturcturing listing route
-const reviews = require("./routers/review.js")          //resturcturing revies route
-
+const listingRouter = require("./routers/listing.js")        //resturcturing listing route
+const reviewRouter = require("./routers/review.js")          //resturcturing revies route
+const userRouter = require("./routers/user.js")          //resturcturing revies route
 
 const session = require("express-session");             //require express-session to help storege data on temprory
 const flash = require("connect-flash")
 
+//Authentication and Authorization (login & signup)-------------------------
+//https://www.passportjs.org/packages/
+//https://www.npmjs.com/package/passport   -------  read documentation
+//npm i passport , npm i passport-local , npm i passport-local-mongoose
+//user.js file -----------
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
+const User = require("./models/user.js");
+
 const MONGO_URL ="mongodb://127.0.0.1:27017/wanderlust";
+main()
+    .then(()=>{
+        console.log("connected to DB");
+    })
+    .catch(err => console.log(err));
+
+async function main() {
+  await mongoose.connect(MONGO_URL);
+}
+
+app.listen(8080,()=>{
+    console.log("server is listening to port 8080");
+});
+
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
@@ -39,29 +68,37 @@ const sessionOptions = {
 };
 app.use(session(sessionOptions))  
 app.use(flash());
+
+//Authentication and Authorization----------
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));   // use static authenticate method of model in LocalStrategy----
+
+passport.serializeUser(User.serializeUser());           // use static serialize and deserialize of model for passport session support----
+passport.deserializeUser(User.deserializeUser());
+
+
 app.use((req,res,next)=>{
     res.locals.success = req.flash("success")   //success send to flash.ejs
     res.locals.error = req.flash("error")
+    res.locals.currUser = req.user;
     next();
 })
 
+// app.get("/",(req,res)=>{
+//     res.send("Hi, I am root");
+// })
 
-main()
-    .then(()=>{
-        console.log("connected to DB");
-    })
-    .catch(err => console.log(err));
+// app.get("/demouser",async(req,res)=>{
+//     let fakeUser = new User({
+//         email: "student@gmail.com",
+//         username: "delta-student"
+//     });
+//     let registeredUser = await User.register(fakeUser,"helloworld");
+//     res.send(registeredUser);
+// })
 
-async function main() {
-  await mongoose.connect(MONGO_URL);
-}
-
-app.listen(8080,()=>{
-    console.log("server is listening to port 8080");
-});
-app.get("/",(req,res)=>{
-    res.send("Hi, I am root");
-})
+app.use("/",userRouter);
 
 // //listings validation-----
 // const validateListing = (req,res,next)=>{
@@ -113,7 +150,7 @@ app.get("/",(req,res)=>{
 
 
 //-------------------------------------------------Restructuring Listing Router----------------------------------------------------------------
-app.use("/listings",listings)
+app.use("/listings",listingRouter)
 // //----------------------------------------------Index Route----------------------------------------------
 // app.get("/listings",wrapAsync(async(req,res,next)=>{
 //     let allListing = await Listing.find();
@@ -224,7 +261,7 @@ app.use("/listings",listings)
 
 
 //-------------------------------------------------Restructuring Review Router----------------------------------------------------------------
-app.use("/listings/:id/reviews",reviews)
+app.use("/listings/:id/reviews",reviewRouter)
 // //------------------------------------------------Create Reviews Route--------------------------------------------
 // app.post("/listings/:id/reviews",validateReview,wrapAsync(async(req,res,next)=>{
 //     let listing = await Listing.findById(req.params.id);
@@ -245,7 +282,6 @@ app.use("/listings/:id/reviews",reviews)
 //     await Review.findByIdAndDelete(reviewId);                           //review delete
 //     res.redirect(`/listings/${id}`); 
 // }))
-
 
 
 
