@@ -68,7 +68,7 @@ module.exports.createListing =  async(req,res,next)=>{                          
     //     throw new ExpressError(400,result.error);
     // }
 
-    //use geocoding----------
+    //use geocoding----------geometry object add in listing
     let response = await geocodingClient.forwardGeocode({
         query: `${req.body.listing.location},${req.body.listing.country}`,
         limit: 1
@@ -127,10 +127,18 @@ module.exports.updateListing = async(req,res,next)=>{
     //     req.flash("error","You don't have parmissions to edit");
     //     return res.redirect(`/listings/${id}`);
     // }
+    //use geocoding----------geometry object add in listing
+    let response = await geocodingClient.forwardGeocode({
+        query: `${req.body.listing.location},${req.body.listing.country}`,
+        limit: 1
+    }).send()
     let updateListing = req.body.listing;  
     // console.log(updateListing);
     // console.log({...updateListing});  
     let listing = await Listing.findByIdAndUpdate(id,updateListing);
+
+    listing.geometry = response.body.features[0].geometry;   //save geometry - type and coordinates in mongoose
+    await listing.save();
 
     if(typeof req.file != "undefined"){     //update image----
         let url = req.file.path;
