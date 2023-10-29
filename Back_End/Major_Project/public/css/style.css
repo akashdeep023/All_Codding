@@ -11,8 +11,24 @@ body{
 
 /* navbar */
 .navbar{
-    height: 5rem;
+    height: 5.5rem;
     background-color: white;
+}
+.container-fluid{
+    margin: 0px 5%;
+    
+}
+.navbar img.imgAirbnb{
+    height: 3rem;
+    width: 6.2rem;
+    filter: contrast(2);
+}
+.navbar img.imgAirbnb-s{
+    height: 2.2rem;
+    width: 3rem;
+    filter: contrast(2);
+    margin-top: 6px;
+    /* display: none; */
 }
 .fa-compass{
     color: #fe434d;
@@ -20,6 +36,18 @@ body{
 }
 .nav-link{
     color: black !important;
+    font-size: 1.5rem;
+}
+.navbar-nav{
+    background-color: rgba(255, 255, 255, 0.928);
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+@media (max-width: 707px){
+    .navbar img.imgAirbnb-s{
+        /* display: block !important; */
+        display: none !important;
+    }
 }
 
 /* footer */
@@ -72,10 +100,7 @@ body{
     opacity: .9; 
     transition: .5s ease-out 0s;
 }
-.navbar-nav{
-    background-color: rgba(255, 255, 255, 0.928);
-    font-weight: 600;
-}
+
 
 
 /* -------hover effect-------- */
@@ -83,6 +108,7 @@ body{
     /* height: 17rem !important; */
     overflow: hidden !important;
     border-radius: 1rem !important;
+    display: flex;
 }
 .card-img{
     height: 20rem !important;
@@ -125,6 +151,7 @@ body{
 .show-img{
     height: 30vh !important;
     opacity: 1 !important;
+    /* width: 30vh; */
 }
 .btns{
     display: flex;
@@ -143,7 +170,12 @@ body{
     width: 4rem !important;
  }   
  #map{
-    height: 200px !important;
+    height: 300px !important;
+ }
+ .mapImg{
+    /* padding: none; */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
  }
 }
 
@@ -155,28 +187,31 @@ body{
 
 /* map  */
 #map{
-    height: 400px;
+    height: 600px;
     width: 100%;
     border-radius: 1rem;
     border: 1px solid rgba(0, 128, 0, 0.428);
 }
 
 
-@media (max-width: 767px){
-.show-main{
-    display: contents !important;
-    width: auto !important;
-    margin: none;
-    padding: none;
-    /* position: relative; */
-    max-width: 650px !important;
-    
+@media (max-width: 768px){
+    .show-main{
+        display: contents !important;
+        width: auto !important;
+        margin: none;
+        padding: none;
+        /* position: relative; */
+        max-width: 650px !important;
+        
+    }
+    .show-main>div{
+        /* align-items: center; */
+        width: 95%;
+        /* position: relative !important;
+        left: 10px !important; */
+        margin: auto auto !important;
+    }
 }
-.show-main>div{
-    /* align-items: center; */
-    width: 95%;
-    /* position: relative !important;
-    left: 10px !important; */
-    margin: auto auto !important;
-}
-}
+/* body::-webkit-scrollbar{
+    display: none;
+} */
