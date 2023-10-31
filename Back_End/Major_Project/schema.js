@@ -14,7 +14,7 @@ module.exports.listingSchema = Joi.object({
         location: Joi.string().required(),
         price: Joi.number().required().min(0),
         image: Joi.string().allow("",null),
-    }).required()
+    }).required()//---------.required()     delete kiye to work kiya par 
 })
 //reviews validation-------
 module.exports.reviewSchema = Joi.object({

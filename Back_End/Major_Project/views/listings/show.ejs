@@ -17,7 +17,7 @@
                 <p class="card-text"> Owned by: <b><i><%= listing.owner.username %></i></b></p>
                 <p class="card-text"> <%= listing.description %> </p>
                 <p class="card-text"> &#8377; <%= listing.price.toLocaleString("en-In") %> </p>
-                <p class="card-text"> <%= listing.location %>, <%= listing.country %>  <i class="fa-solid fa-location-dot" style="filter: drop-shadow(0px 0px 3px black); font-size: 1.25rem;"></i></p>
+                <p class="card-text"> <%= listing.location %>, <%= listing.country %>  <i class="fa-solid fa-location-dot" style="margin-right: 1rem; font-size: 1.25rem;"></i></p>
                 <!-- <p class="card-text"> <%# listing.country %> </p> -->
             </div>
         </div>
@@ -86,8 +86,15 @@
         </div>
         <div class="col-8 offset-2 mapImg">
             <h4>Where you'll be <i class="fa-solid fa-location-crosshairs"></i></h4>
-            <div id="map"></div>
+            <div id="map" style="position: relative;">
+                <div class="map-zoom-icon">
+                    <div class="icon icon-plus" onclick="zoomin()"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    <div class="icon icon-min" onclick="zoomout()"><i class="fa-solid fa-magnifying-glass-minus"></i></div>
+                </div>
+                <div class="akash"><a href="https://github.com/akashdeep023">AD MAP</a></div>
+            </div>
         </div>
     </div>
 </body>
+
 <script src="/js/map.js"></script>

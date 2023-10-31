@@ -25,7 +25,7 @@
                 </div>
                 <!-- <div class="mb-3">
                     <label for="image" class="form-label">Image Link</label>
-                    <input type="text" value= "<%= listing.image %>" name="listing[image]" class="form-control" required> 
+                    <input type="text" value= "<%#= listing.image %>" name="listing[image]" class="form-control" required> 
                     <div class="invalid-feedback">Please enter a image link.</div>
                 </div> -->
                 <div class="mb-3">
@@ -34,7 +34,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Upload New Image</label>
-                    <input type="file" name="listing[image]" class="form-control" > 
+                    <input type="file" name="listing[image]" class="form-control imageInput" > 
                 </div>
                 <div class="row">
                     <div class="mb-3 col-md-4">
@@ -53,9 +53,25 @@
                     <input type="text" value= "<%= listing.location %>" name="listing[location]" class="form-control" required>  
                         <div class="invalid-feedback">Location should be valid</div> 
                 </div>
-                <button class="btn btn-dark edit-btn mb-3">Edit</button>                
+                <button class="btn btn-dark edit-btn mb-3 uploadButton" onclick="sizeLimit()">Edit</button>                
             </form>
         </div>
     </div>    
 </body>
 <!-- </html> -->
+<!-- <script>
+    sizeLimit =  ()=> {
+    const fileInput = document.getElementsByClassName('imageInput');
+    const maxSize = 5 * 1024; // 5KB in bytes
+    console.log("click button")
+    console.log(fileInput.files)
+
+    const file = fileInput.files[0];
+
+    if (file.size > maxSize) {
+        console.log("File size exceeds the limit (5MB)");
+      return;
+    }
+
+  };
+</script> -->

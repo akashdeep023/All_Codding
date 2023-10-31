@@ -5,11 +5,14 @@ const {listingSchema,  reviewSchema} = require("./schema.js")
 
 //listings validation-----
 module.exports.validateListing = (req,res,next)=>{
+    // console.log(req)
+    console.log(req.body)
     let {error} = listingSchema.validate(req.body);
     if(error){
         let errMsg = error.details.map((el)=>el.message).join(",");
         console.log(error);
         console.log(errMsg);
+        console.log("error listing ------")
         throw new ExpressError ( 400, errMsg);
     }else{
         next();
@@ -58,27 +61,31 @@ module.exports.isOwner = async (req,res,next)=>{
             return res.redirect(`/listings/${id}`);
         }
         next();
-    //try and catch create bye me ------ to 
+    //try and catch create bye me ------ to         isse aache se samjho ki kyo catch ka use  kiye ho-----------------------------------
     }catch(err){
-        next(new ExpressError(400,"Page Not Found"));
+        next(new ExpressError(400,"This Listing Page is not valid...."));
     }
 }
 
 // Authorization for reviews
 module.exports.isReviewAuthor = async (req,res,next)=>{
-    let {id,reviewId} = req.params;
-    let review = await Review.findById(reviewId);
-    if(!review.author.equals(res.locals.currUser._id)){             
-        req.flash("error","You are not the author of this review");
-        return res.redirect(`/listings/${id}`);
+    try{
+        let {id,reviewId} = req.params;
+        let review = await Review.findById(reviewId);
+        if(!review.author.equals(res.locals.currUser._id)){             
+            req.flash("error","You are not the author of this review");
+            return res.redirect(`/listings/${id}`);
+        }
+        next();
+    }catch{
+        next(new ExpressError(400,"This Review Page is not valid...."))
     }
-    next();
 }
-//check ------------------
+//check ------------------ === operator to review
 // module.exports.isReviewAuthor = async (req,res,next)=>{
 //     let {id,reviewId} = req.params;
 //     let review = await Review.findById(reviewId);
-//     if(!(`${review.author}`===`${res.locals.currUser._id}`)){             
+//     if(!(`${review.author}`===`${res.locals.currUser._id}`)){                    
 //         req.flash("error","You are not the author of this review");
 //         return res.redirect(`/listings/${id}`);
 //     }
