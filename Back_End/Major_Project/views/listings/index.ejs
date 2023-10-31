@@ -6,7 +6,6 @@
     <title>WonderLust</title>
 </head> -->
 <% layout("/layouts/boilerplate") %>    <!-- is layout use karne se html ka set custome boilerplate milta h -->
-<body>
     <!-- <h3>All Listings</h3> -->
     <!-- comment create new listing button this is use on navbar -->
     <!-- <form method="get" action="/listings/new">
@@ -42,6 +41,54 @@
                 <div><i class="fa-solid fa-fire"></i></div>
                 <p>Trending</p>
             </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
         </div>
         <div class="tax-toggle">
             <div class="form-check form-switch form-check-reverse">
@@ -53,8 +100,8 @@
     <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
         <% for (const listing of allListing) { %>
             <a href="/listings/<%= listing._id %>" class="listing-link">
-                <div class="card col listing-card">
-                    <div class="card-img">
+                <div class="card col listing-card index-res">
+                    <div class="card-img ">
                         <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" />
                     </div>
                     <!-- <div class="card-img-overlay">xyz</div> -->
@@ -69,7 +116,6 @@
             </a>            
         <% } %>
     </div>    
-</body>
 <script>
    
 </script>
