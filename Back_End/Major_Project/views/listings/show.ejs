@@ -16,32 +16,21 @@
                 <div class="card-body">
                     <p class="card-text"> Owned by: <b><i><%= listing.owner.username %></i></b></p>
                     <p class="card-text"> <%= listing.description %> </p>
-                    <p class="card-text"> &#8377; <%= listing.price.toLocaleString("en-In") %> </p>
+                    <p class="card-text"> &#8377; <%= listing.price.toLocaleString("en-In") %> / night </p>
                     <p class="card-text"> <%= listing.location %>, <%= listing.country %>  <i class="fa-solid fa-location-dot" style="margin-right: 1rem; font-size: 1.25rem;"></i></p>
                     <!-- <p class="card-text"> <%# listing.country %> </p> -->
                 </div>
             </div>
             <!-- Authorization  -->
             <% if(currUser && currUser._id.equals(listing.owner._id)){ %>
-            <div class="btns ">
-                <a type="button" href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3 edit-btn">Edit</a>
-                <form method="post" action="/listings/<%= listing._id %>?_method=DELETE">
-                    <button class="btn btn-dark offset-4 del-btn">Delete</button>
-                </form>            
-            </div>
-            <style>
-                .btns{
-                    display: block !important;
-                    height: 3rem !important;
-                }.edit-btn, .del-btn{
-                    display: inline;
-                    width: 5rem !important;
-                    margin: 10px !important;
-                }.del-btn{
-                    display: inline !important;
-                }
-            </style>
-            
+            <div class="btns offset-2 ">
+                <div class="btns-edit">
+                    <a type="button" href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3 edit-btn">Edit</a>
+                    <form method="post" action="/listings/<%= listing._id %>?_method=DELETE">
+                        <button class="btn btn-dark offset-4 del-btn">Delete</button>
+                    </form> 
+                </div>
+            </div>           
         
             <% } %>
             <!-- --------------- review ------------- -->
@@ -72,7 +61,7 @@
                         <textarea class="form-control" name="review[comment]" id="comment" cols="30" rows="3" required></textarea>
                         <div class="invalid-feedback">Please add some comments for review</div>
                     </div>
-                    <button class="btn btn-outline-dark mb-3">Submit</button>
+                    <button class="btn btn-success mb-3">Submit</button>
                 </form>
                 <% } %>
                 <% if(listing.reviews.length > 0 ){ %>
@@ -108,33 +97,5 @@
             </div>
         </div>
     </div>
-<!-- <script src="/js/map.js"></script> -->
-<style>
+<script src="/js/map.js"></script>
 
-
-    @media (min-width: 991px) {
-        .review-main{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-
-        }
-        .review-lg{
-            margin: 1rem !important;
-            max-height: fit-content !important;
-        }
-    }
-    .review-del{
-        position: absolute;
-        right: 20px;
-        top: 5px;
-        
-    }
-    .card-title , .card-text{
-        display: inline;
-    }
-    .card-title{
-        margin-right: 10px;
-    }
-    </style>

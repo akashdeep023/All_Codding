@@ -22,3 +22,52 @@
     max-width: 450px !important;
 }
 }
+.card-body{
+    display: flex;
+    flex-direction: column;
+}
+.card-body>p{
+    margin-bottom: 0.6rem;
+}
+/* btns ----edit or delete---- */
+.btns{
+    display: block !important;
+    height: 3rem !important;
+}.edit-btn, .del-btn{
+    display: inline;
+    width: 5rem !important;
+    margin: 10px !important;
+}.del-btn{
+    display: inline !important;
+}
+.btns-edit{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 50px !important;
+}
+@media (min-width: 991px) {
+    .review-main{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+    .review-lg{
+        margin: 1rem !important;
+        max-height: fit-content !important;
+    }
+}
+.review-del{
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    
+}
+.card-title , .card-text{
+    display: inline;
+}
+.card-title{
+    margin-right: 10px;
+}
