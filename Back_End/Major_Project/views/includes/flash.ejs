@@ -1,10 +1,19 @@
 <style>
 /* flush animation -------------------------------------------------------------------------------------  */
     .alert{
+        display: flex;
+        justify-content: center;
         z-index: 1;
         position: absolute;
         top: calc(5.5rem - 90px);
-        animation: slide-in 2s ease-in forwards;
+        /* top: 5.5rem; */
+        animation: slide-in 2.5s ease-in forwards;
+    }
+    @media (max-width:768px) {
+        .alert{
+            /* left: 17%; */
+        }
+        
     }
     @keyframes slide-in {
         0% {

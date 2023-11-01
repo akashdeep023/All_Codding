@@ -1,25 +1,20 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WonderLust</title>
-</head> -->
 <%- layout("/layouts/boilerplate.ejs") %>
-    <div class="row">
-        <div class="col col-8 offset-2">
+    <div class="row mt-0 mx-auto">
+        <div class="col-md-8 mx-auto">
             <br><br>
             <h3>Edit Your Listing</h3>
-            <form method="post" action="/listings/<%= listing._id %>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
+            <form method="post" action="/listings/<%= listing._id %>?_method=PUT" class="needs-validation" novalidate
+                enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" value= "<%= listing.title %>" name="listing[title]" class="form-control" required> 
+                    <input type="text" value="<%= listing.title %>" name="listing[title]" class="form-control border border-black border-opacity-50" required>
                     <div class="valid-feedback">Title looks good!</div>
-                    <div class="invalid-feedback">Title should be valid</div> 
+                    <div class="invalid-feedback">Title should be valid</div>
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea cols="20" rows="3" name="listing[description]" class="form-control" required><%= listing.description %></textarea>  
+                    <textarea cols="20" rows="3" name="listing[description]" class="form-control border border-black border-opacity-50"
+                        required><%= listing.description %></textarea>
                     <div class="invalid-feedback">Please enter a short description.</div>
                 </div>
                 <!-- <div class="mb-3">
@@ -31,45 +26,40 @@
                     <label for="image" class="form-label">Original Image Preview</label><br>
                     <img src="<%= originalImage %>" alt="Original Image" class="listingImg">
                 </div>
-                <div class="mb-3">
-                    <label for="image" class="form-label">Upload New Image</label>
-                    <input type="file" name="listing[image]" class="form-control imageInput" > 
+                <div class="row mb-3">
+                    <div class="col-10">
+                        <label for="image" class="form-label">Upload New Image</label>
+                        <input type="file" name="listing[image]" class="form-control border border-black border-opacity-50 imageInput" id="verify-img">
+                        <p id="errorContainer"></p>                                     
+                    </div>
+                    <div class="col-2">
+                        <label class="form-control border border-white" for="verify">Verify</label>     
+                        <input type="checkbox" id="verify" class="form-btn btn ms-3 border border-black border-opacity-50"  required style="height: 25px; width:25px;">           
+                    </div>
                 </div>
                 <div class="row">
                     <div class="mb-3 col-md-4">
                         <label for="price" class="form-label">Price</label>
-                        <input type="number" value= "<%= listing.price %>" name="listing[price]" class="form-control" required>  
-                        <div class="invalid-feedback">Price should be valid</div> 
+                        <input type="number" value="<%= listing.price %>" name="listing[price]" class="form-control border border-black border-opacity-50"
+                            required>
+                        <div class="invalid-feedback">Price should be valid</div>
                     </div>
                     <div class="mb-3 col-md-8">
                         <label for="country" class="form-label">Country</label>
-                        <input type="text" value= "<%= listing.country %>" name="listing[country]" class="form-control" required>  
-                        <div class="invalid-feedback">Country name should be valid</div> 
+                        <input type="text" value="<%= listing.country %>" name="listing[country]" class="form-control border border-black border-opacity-50"
+                            required>
+                        <div class="invalid-feedback">Country name should be valid</div>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="location" class="form-label">Location</label>
-                    <input type="text" value= "<%= listing.location %>" name="listing[location]" class="form-control" required>  
-                        <div class="invalid-feedback">Location should be valid</div> 
+                    <input type="text" value="<%= listing.location %>" name="listing[location]" class="form-control border border-black border-opacity-50"
+                        required>
+                    <div class="invalid-feedback">Location should be valid</div>
                 </div>
-                <button class="btn btn-dark edit-btn mb-3 uploadButton" onclick="sizeLimit()">Edit</button>                
+                <button class="btn btn-dark edit-btn mb-3 uploadButton" onclick="sizeLimit()">Edit</button>
             </form>
         </div>
-    </div>    
-<!-- </html> -->
-<!-- <script>
-    sizeLimit =  ()=> {
-    const fileInput = document.getElementsByClassName('imageInput');
-    const maxSize = 5 * 1024; // 5KB in bytes
-    console.log("click button")
-    console.log(fileInput.files)
-
-    const file = fileInput.files[0];
-
-    if (file.size > maxSize) {
-        console.log("File size exceeds the limit (5MB)");
-      return;
-    }
-
-  };
-</script> -->
+    </div>
+    
+    <script src="/js/editImg-size.js"></script>

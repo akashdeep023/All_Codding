@@ -67,7 +67,7 @@ module.exports.createListing =  async(req,res,next)=>{                          
     // if(result.error){
     //     throw new ExpressError(400,result.error);
     // }
-
+    // console.log(req.body)
     //use geocoding----------geometry object add in listing
     let response = await geocodingClient.forwardGeocode({
         query: `${req.body.listing.location},${req.body.listing.country}`,
