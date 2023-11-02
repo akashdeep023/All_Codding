@@ -121,6 +121,48 @@ body::-webkit-scrollbar {
     opacity: .9;
     transition: .5s ease-out 0s;
 }
+.heart{
+    width: 22px;
+    position: absolute;
+    z-index: 10;
+    top: 15px;
+    right: 15px;
+    opacity: .5;
+    filter: drop-shadow(1px 1px 5px white);
+    overflow: hidden;
+}
+.heart:hover{
+    opacity: 1;
+}
+@media (max-width: 1400px) and (min-width: 1199px) {
+    .heart{
+        right: 45px;
+    }
+}
+@media (max-width: 767px) {
+    .heart{
+        right: 105px;
+    }
+}
+@media (max-width: 586px) {
+    .heart{
+        position: relative;
+        top: 10px;
+        left: 10px;
+        /* right: 19vw; */
+    }
+    .card-img-top{
+        height: 100%;
+        position: relative;
+        top: -25px;
+    }
+}
+@media (width: 767px) {
+    .heart{
+        position: relative;
+        right: 100px;
+    }
+}
 
 /* -------hover effect--------------------------------------------------------------------------------------------- */
 .show-card-img {
@@ -136,7 +178,8 @@ body::-webkit-scrollbar {
     overflow: hidden !important;
     border-radius: 1rem !important;
     box-shadow: 0px 6px 5px black !important;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+
 }
 
 .card-img-top:hover {
@@ -279,75 +322,28 @@ body::-webkit-scrollbar {
     .index-res-img {
         width: 320px;
     }
-
-    /* .container{
-        display: block !important;
-    } */
+    
+    .container{
+        display: flex !important;
+        flex-direction: column;
+        margin-bottom: 15px;
+        margin-left: 15px;
+    }
 }
-
-@media (max-width: 350px) {
-    .index-res-img {
-        width: 280px;
+@media (max-width: 355px) {
+    .card-img {
+        max-width: 290px;
+        height: 19rem !important;
+        max-width: 290px;
+        overflow: hidden !important;
+        border-radius: 1rem !important;
+        box-shadow: 0px 6px 5px rgb(0, 0, 0) !important;
+        margin-bottom: 15px;
+        margin-left: 15px;
+    
+    }
+    .card-text{
+        margin-left: 15px;
     }
 }
 
-/* filters ------------------------------------------------------------------------------------- */
-.filter-main {
-    display: flex;
-    /* flex-wrap: wrap; */
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-
-}
-
-#filters {
-    display: flex;
-    /* flex-wrap: wrap; */
-    width: 100%;
-    /* margin: 0px 10px; */
-    overflow-x: scroll;
-    align-items: center;
-}
-
-#filters::-webkit-scrollbar {
-    display: none;
-}
-
-.filter {
-    text-align: center;
-    margin-right: 2rem;
-    margin-top: 2rem;
-    opacity: 0.7;
-}
-
-.filter:hover {
-    opacity: 1;
-    cursor: pointer;
-}
-
-.filter p {
-    font-size: 0.8rem;
-}
-
-.tax-info {
-    display: none;
-    text-decoration: underline;
-}
-
-.price-info {
-    display: inline;
-}
-
-.tax-toggle {
-    border: 1px solid rgba(0, 0, 0, 0.349);
-    border-radius: 1rem;
-    height: 3.35rem;
-    min-width: 250px;
-    width: fit-content !important;
-    font-size: 1rem;
-    padding: 1rem;
-    /* margin-left: 3rem; */
-    display: flex;
-    align-items: center;
-}
