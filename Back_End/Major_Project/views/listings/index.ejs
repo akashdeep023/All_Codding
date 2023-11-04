@@ -138,7 +138,8 @@
                 <div class="card col listing-card index-res">
                     <div class="index-res-img">
                         <div class="card-img">
-                            <img class="heart" src="https://res.cloudinary.com/dfkqweeha/image/upload/v1698920650/wanderlust_DEV/exbjmnms4qq4f5xmdowa.png" alt="like">
+                            <img class="heart heart-r" src="/Icon/heart-red.png" alt="like" style="opacity: 1; z-index: 5;">
+                            <img class="heart heart-b" src="/Icon/heart-black.png" alt="like" style="z-index: 6;">
                             <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" />
                         </div>
                         <!-- set date  -->
@@ -162,8 +163,37 @@
             </a>            
         <% } %>
     </div>  
-<!-- </html> -->
 <script src="/js/filter.js"></script>
+<script>
+    // let heartR = document.querySelectorAll(".heart-r")
+    // let heartB = document.querySelectorAll(".heart-b")
+    // for (const heartb of heartB) {
+    //     heartb.addEventListener("click", ()=>{
+    //         heartb.style.zIndex = "4"
+    //     })     
+    // }
+    // for (const heartr of heartR) {
+    //     heartr.addEventListener("click", ()=>{
+    //         heartr.style.zIndex = "3"
+    //     })     
+    // }
+
+    let heart1 = document.querySelectorAll(".heart")
+    // for (const heart1 of heart) {
+    for(let i = 1; i<  heart1.length; i++){
+        console.log(heart1[i])
+        heart1[i].addEventListener("click", ()=>{
+            console.log(`click heart: ${heart1[i]}`)
+        // heart1.addEventListener("click", ()=>{
+        //     for (const h of heart1) {
+        //         // console.log(h)
+        //         h[0].style.zIndex = "4"
+        //         h[1].style.zIndex = "3"                
+        //     }
+        })     
+    }
+
+</script>
 
 
 <!-- <li>Description : <%= //listing.description %></li>
