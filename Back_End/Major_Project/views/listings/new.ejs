@@ -1,10 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WonderLust</title>
-</head> -->
 <%- layout("/layouts/boilerplate.ejs") %>
     <div class="row mt-0 mx-auto">
         <div class="col-md-8 mx-auto">
@@ -38,12 +31,25 @@
                     </div>
                 </div>
                 <div class="m-b3">
-                    <label for="price" class="form-label">Categery</label>
-                    <select class="form-select border border-black border-opacity-50 mb-2" aria-label="Default select example">
-                        <option selected class="w-50%">Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <label for="categery" class="form-label">Categery</label>
+                    <select id="categery" name="listing[categery]]" class="form-select border border-black border-opacity-50 mb-2"  multiple >
+                        <option selected >Open this select menu</option>
+                        <option value="1">Beachfront</option>
+                        <option value="2">Cabins</option>
+                        <option value="3">OMG</option>
+                        <option value="4">Lake</option>
+                        <option value="5">Design</option>
+                        <option value="6">Amazing pools</option>
+                        <option value="7">Farms</option>
+                        <option value="8">Amazing views</option>
+                        <option value="9">Rooms</option>
+                        <option value="10">Lakefront</option>
+                        <option value="11">Tiny homes</option>
+                        <option value="12">Countryside</option>
+                        <option value="13">Treehouse</option>
+                        <option value="14">Trending</option>
+                        <option value="15">Tropical</option>
+                         
                     </select>
                 </div>
                 <div class="row">
@@ -68,4 +74,3 @@
         </div>
     </div>
     <script src="/js/newImg-size.js"></script>
-<!-- </html> -->
