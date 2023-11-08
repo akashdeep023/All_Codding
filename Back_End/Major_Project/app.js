@@ -114,6 +114,13 @@ app.use((req,res,next)=>{
 //     res.send(registeredUser);
 // })
 
+// Get the user's IP address------
+app.use((req, res,next) => {
+    const userIP = req.ip; 
+    console.log(`${res.locals.currUser} IP address is:- ${userIP}`);
+    next();
+});
+
 app.use("/",userRouter);
 
 // //listings validation-----
