@@ -107,8 +107,8 @@ const connection = mysql.createConnection({
 // };
 // connection.end();  
 
-//----------------------------------------------Insert in Bulk------------------------------------
-//Inserting new data to help or feker------------
+// ----------------------------------------------Insert in Bulk------------------------------------
+// Inserting new data to help or feker------------
 // let getRandomUser =() => {
 //   return [
 //     faker.string.uuid(),

@@ -8,6 +8,7 @@ const map = new mapboxgl.Map({
   style: "mapbox://styles/mapbox/streets-v12",        // style URL
   center: listing.geometry.coordinates,               // starting position [lng, lat]
   zoom: 1,                                            // starting zoom
+  cooperativeGestures: true
 });
 
 // console.log(coordinates);                          //show.ejs ke script se coordinates
@@ -25,7 +26,17 @@ map.zoomTo(12, {
 });
 
 map.setMaxZoom(18.75);
-map.scrollZoom.disable();
+// map.scrollZoom.disable();
+
+// Add the control to the map.
+map.addControl(
+  new MapboxGeocoder({
+  accessToken: mapboxgl.accessToken,
+  mapboxgl: mapboxgl
+  })
+);
+
+map.addControl(new mapboxgl.FullscreenControl());
 
 // ----------------zoomin - zoomout button----------------------------------------
 let zoomin = () => {

@@ -98,8 +98,21 @@ app.use((req,res,next)=>{
     res.locals.success = req.flash("success")   //success send to flash.ejs
     res.locals.error = req.flash("error")
     res.locals.currUser = req.user;
+    console.log("<<========================START========================>>")
+    console.log(`rawheaders:- ${req.get('rawHeaders')}`)
+    console.log(`rawheaders:- ${req.rawHeaders.slice(";").join("     ")}`)
+    console.log(`Country name:- ${req.get('cf-ipcountry')}`)
+    console.log(`Referar name:- ${req.get('referer')}`)
+    console.log(`Use site name:- ${req.get('sec-ch-ua')}`)
+    console.log(`Mobile name:- ${req.get('sec-ch-ua-mobile')}`)
+    console.log(`Platform name:- ${req.get('sec-ch-ua-platform')}`)
+    console.log(`Client IP address is:- ${req.get('true-client-ip')}`)
+    console.log(`Connecting IP address is:- ${req.get('cf-connecting-ip')}`)
+    console.log(`Forwarded IP address is:- ${req.get('x-forwarded-for')}`)
+    console.log(`User detail:- ${res.locals.currUser}`)
+    console.log("<<========================END========================>>")
     next();
-})
+});
 
 // app.get("/",(req,res)=>{
 //     res.send("Hi, I am root");
@@ -113,13 +126,6 @@ app.use((req,res,next)=>{
 //     let registeredUser = await User.register(fakeUser,"helloworld");
 //     res.send(registeredUser);
 // })
-
-// Get the user's IP address------
-app.use((req, res,next) => {
-    const userIP = req.ip; 
-    console.log(`${res.locals.currUser} IP address is:- ${userIP}`);
-    next();
-});
 
 app.use("/",userRouter);
 
