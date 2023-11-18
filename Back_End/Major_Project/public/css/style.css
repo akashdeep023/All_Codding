@@ -1,5 +1,8 @@
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    /* font-family: 'Plus Jakarta Sans', sans-serif !important; */
+    font-family: 'Inknut Antiqua', serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -63,42 +66,6 @@ body::-webkit-scrollbar {
     }
 }
 
-/* footer -------------------------------------------------------------------------------------*/
-.f-info-links a {
-    text-decoration: none;
-    color: black;
-}
-
-.f-info-links a:hover {
-    text-decoration: underline;
-}
-
-.f-info-links,
-.f-info-socials,
-.f-info-brand {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.f-info-socials i {
-    font-size: 1.2rem;
-    margin-right: 1rem;
-
-}
-
-.f-info {
-    text-align: center;
-    display: flex;
-    height: 8rem;
-    background-color: #ebebeb;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: space-evenly;
-}
-
 /* card ------------------------------------------------------------------------------------- */
 .card {
     border: .5px solid grey;
@@ -115,7 +82,7 @@ body::-webkit-scrollbar {
 
 .card-img-top {
     width: 100% !important;
-    height: 20rem !important;
+    height: 20.5rem !important;
     object-fit: cover !important;
     opacity: .9;
     transition: .5s ease-out 0s;
@@ -185,7 +152,7 @@ body::-webkit-scrollbar {
 }
 
 .card-img-top:hover {
-    transform: scale(1.125) !important;
+    transform: scale(1.08) !important;
     transition: .5s ease-in-out 0s;
     filter: contrast(1.25);
     opacity: 1;
@@ -259,7 +226,36 @@ body::-webkit-scrollbar {
 #map {
     position: relative;
 }
-
+.mapboxgl-ctrl-geocoder {
+    right: 40px;
+}
+.mapboxgl-ctrl-geocoder--powered-by{
+    display: none !important;
+}
+.mapboxgl-ctrl-geocoder--input{
+    border: none !important;
+}
+.mapboxgl-ctrl-geocoder{
+    border: 1px solid rgb(137, 137, 137) !important;
+}
+.mapboxgl-ctrl-group{
+    position: absolute;
+    z-index: 3;
+    top: 4px;
+    right: 2.8px;
+}
+@media (max-width: 639px) {
+    .mapboxgl-ctrl-geocoder{
+        height: 40px !important;
+        width: 160px !important;
+    }
+    .mapboxgl-ctrl-geocoder--input{
+        height: 40px !important;
+    }
+    .mapboxgl-ctrl-geocoder--icon-search{
+        top: 9px !important;
+    }
+}
 .map-zoom-icon {
     border-radius: 6px;
     font-size: 2rem;

@@ -29,15 +29,17 @@
     margin-top: 1rem;
     opacity: 0.6;
     transition: 150ms ease-in-out all;
-
 }
 
 .filter:hover {
     opacity: 1 !important;
-    border-bottom: 2.5px solid rgba(66, 63, 63, 0.579) !important;
+    border-bottom: 2.5px solid rgba(66, 63, 63, 0.679) !important;
     transform: scale(1.05) !important;
-    transition: 150ms ease-in-out all;
-    
+    transition: 150ms ease all;    
+}
+.selectedFilter{
+    opacity: 1;
+    border-bottom: 2.5px solid #000;
 }
 
 .tax-info {
@@ -60,19 +62,33 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(255, 255, 255);
-    font-weight: 800;
-    
+    font-weight: 500;    
+}
+.tax-toggle:hover{
+    border: 1px solid black;
 }
 
 .tax-filter {
     justify-self: flex-end;
     min-width: 280px;
 }
-
-.tax-switch {
-    height: 20px;
+.tax-sticky-sticky{
+    position: relative;
+    top: -2px;
 }
+.tax-switch:checked {
+    height: 23px;
+    background-color: black;
+}
+.form-check-input{
+    height: 23px;
+    width: 2.3rem !important;
+    margin-left: 5px !important;
+}
+.form-switch .form-check-input{
+    transition: background-position .25s ease-in-out;
 
+}
 .tax-sticky {
     display: none;
 }
@@ -81,7 +97,7 @@
     justify-content: center;
     align-items: center;
     margin: 0px auto;
-    min-width: 120px;
+    min-width: 100px;
 }
 .tax-filter-icon-small{
     display: none;
@@ -89,7 +105,7 @@
 .filter>p{
     display:-block;
     white-space: nowrap;
-    font-weight: 800;
+    font-weight: 600;
     font-size: 0.7rem;
     color: black;
 }
