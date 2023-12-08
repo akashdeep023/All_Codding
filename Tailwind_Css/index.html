@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Css</title>
+    <!-- 1st method to use tailwindcss - with cdn link -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
+    <!-- 2st method to use tailwindcss - with PostCSS install package -->
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Read Documentation and apply style -->
+    <!-- Typography & Styling -->
+    <div>
+        <h1 class="mt-3 ps-4 underline text-6xl text-center font-bold ">Akashdeep</h1>
+        <h2 class="text-4xl font-medium">h2 - Hello</h2>
+        <h3 class="text-2xl font-thin">h3 - World!</h3>
+        <p>Remove - all default style</p>
+        <p>Akashdeep</p>
+    </div>
+
+    <div>
+        <p class="font-sans">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum repellendus laboriosam nulla molestiae? Quam eveniet mollitia deleniti id necessitatibus iure ad ullam distinctio rerum enim veniam tempore expedita, odio voluptatem.</p>
+        <p class="font-serif">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum repellendus laboriosam nulla molestiae? Quam eveniet mollitia deleniti id necessitatibus iure ad ullam distinctio rerum enim veniam tempore expedita, odio voluptatem.</p>
+        <p class="font-mono">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum repellendus laboriosam nulla molestiae? Quam eveniet mollitia deleniti id necessitatibus iure ad ullam distinctio rerum enim veniam tempore expedita, odio voluptatem.</p>
+    </div>
+
+    <!-- Color & Spacing -->
+    <div class="bg-green-500 w-48 h-48 text-center p-2 m-1 text-rose-600">This is a div</div>
+    <div class="bg-red-500 w-1/2 h-20 text-center p-2 m-1 text-purple-600">This is a div</div>
+    <div class="bg-yellow-300 w-1/ h-12 text-center p-4 m-4 text-teal-600">This is a div</div>
+    <div class="w-96 h-40 bg-blue-500 text-green-300 py-4 pl-2 mx-4 mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda voluptatibus maiores fugit illum pariatur consequatur commodi, nulla sed deserunt, itaque in, natus corrupti ut blanditiis animi doloremque recusandae porro aperiam!</div>
+
+    <div class="m-2 space-y-4">
+        <div class="bg-purple-500 text-white">One</div>
+        <div class="bg-purple-500 text-white">two</div>
+        <div class="bg-purple-500 text-white">three</div>
+    </div>
+
+    <div class="flex justify-evenly">
+        <div class="bg-black text-white w-20 h-20 text-center">1</div>
+        <div class="bg-sky-400 text-blue-900 w-20 h-20 text-center">2</div>
+        <div class="bg-black text-white w-20 h-20 text-center">3</div>
+    </div>
+    <br/>
+    <div class="h-[100px] m-2 bg-black text-white text-center border-2 border-blue-600 rounded">1</div>
+    <div class="m-2 bg-sky-400 text-blue-900 text-center border-4 border-red-600 rounded-xl border-solid">2</div>
+    <div class="m-2 bg-black text-white text-center border-4 border-blue-600 rounded-2xl border-dotted">3</div>
+
+    <!-- BreakPoints in Tailwind -->
+    <div class="bg-rose-400 sm:bg-yellow-300 md:bg-black md:text-white xl:bg-rose-800">1</div>
+    <div class="bg-blue-400 my-2">2</div>
+
+    <!-- Apply Directive -->
+    <div class="text-white bg-rose-300 border-2 rounded m-2 border-blue-600">one</div>
+    <div class="text-white bg-rose-300 border-2 rounded m-2 border-black">two</div>
+    <div class="text-white bg-rose-300 border-2 rounded m-2 border-red-400">three</div>
+    <br>
+    <div class="box border-blue-600">one</div>
+    <div class="box border-black">two</div>
+    <div class="box border-red-400">three</div>
+</body>
+</html>

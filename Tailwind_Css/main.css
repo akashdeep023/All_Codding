@@ -1,0 +1,10 @@
+/* Add the Tailwind directives to your CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply Directive */
+/* class ne and @apply class_name */
+.box{
+    @apply text-white bg-rose-300 border-2 rounded m-2;    
+}

@@ -1,0 +1,28 @@
+Get started with Tailwind CSS
+-------------------------------
+Installation - Using PostCSS
+Install Tailwind CSS-----
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p         (use -p flag to create additional file for PostCSS)
+
+Configure your template paths-----
+set - tailwind.confing.js
+content: ["*"],
+
+install vite to auto refresh------
+npm i vite
+
+set script - package.json file ------
+"scripts": {
+    "start": "vite"
+  },
+
+create css file and add  directives----
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+link html to css  --------
+
+start - npm run start --------
+
