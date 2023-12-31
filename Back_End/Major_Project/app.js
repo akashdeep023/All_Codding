@@ -1,5 +1,5 @@
 //----------------------------------------------Basic Set up----------------------------------------------
-if(process.env.NODE_ENV != "production"){       //this is use only production face not 
+if(process.env.NODE_ENV != "production"){       //this is use only production face not
     require('dotenv').config();     //require env   || dotenv package in npm
     // console.log(process.env);
     // console.log(process.env.SECRET);
@@ -20,6 +20,7 @@ const ExpressError = require("./utils/ExpressError.js")     //Custome error hand
 const listingRouter = require("./routers/listing.js")        //resturcturing listing route
 const reviewRouter = require("./routers/review.js")          //resturcturing revies route
 const userRouter = require("./routers/user.js")          //resturcturing revies route
+const profileRouter = require("./routers/profile.js"); //resturcturing profile route
 
 const session = require("express-session");             //require express-session to help storege data on temprory
 const MongoStore = require("connect-mongo")     //---  use to session store
@@ -82,7 +83,7 @@ const sessionOptions = {
         httpOnly: true
     }
 };
-app.use(session(sessionOptions))  
+app.use(session(sessionOptions))
 app.use(flash());
 
 //Authentication and Authorization----------
@@ -127,7 +128,9 @@ app.use((req,res,next)=>{
 //     res.send(registeredUser);
 // })
 
-app.use("/",userRouter);
+app.use("/", userRouter);
+
+app.use("/profile", profileRouter); // Restructuring Profile Router create me.
 
 // //listings validation-----
 // const validateListing = (req,res,next)=>{
@@ -148,7 +151,7 @@ app.use("/",userRouter);
 //         let errMsg = error.details.map((el)=>el.message).join(",");
 //         console.log(error);
 //         console.log(errMsg);
-//         throw new ExpressError(400,errMsg)        
+//         throw new ExpressError(400,errMsg)
 //     }else{
 //         next();
 //     }
@@ -229,13 +232,13 @@ app.use("/listings",listingRouter)
 //     // }
 //     // // console.log(newListing);
 //     // await newListing.save();
-//     // res.redirect("/listings"); 
+//     // res.redirect("/listings");
 
 //     //joi packages------------------------------------------------------------------------
 //     //The most powerful schema description language and data validator for JavaScript.
 //     //install -> npm i joi          ||  require
 
-//     // const result = listingSchema.validate(req.body);     
+//     // const result = listingSchema.validate(req.body);
 //     // console.log(result);
 //     // if(result.error){
 //     //     throw new ExpressError(400,result.error);
@@ -271,9 +274,9 @@ app.use("/listings",listingRouter)
 //     // if(!req.body.listing){                       //add validateListing fnx
 //     //     throw new ExpressError(400,"Send valid data for listing")
 //     // }
-//     let updateListing = req.body.listing;  
+//     let updateListing = req.body.listing;
 //     // console.log(updateListing);
-//     // console.log({...updateListing});  
+//     // console.log({...updateListing});
 //     await Listing.findByIdAndUpdate(id,updateListing);
 //     res.redirect(`/listings/${id}`)
 // }));
@@ -309,7 +312,7 @@ app.use("/listings/:id/reviews",reviewRouter)
 //     let {id,reviewId} = req.params;
 //     await Listing.findByIdAndUpdate(id, {$pull: {reviews: reviewId}});  //pull -> remove (review delete by id in listing)
 //     await Review.findByIdAndDelete(reviewId);                           //review delete
-//     res.redirect(`/listings/${id}`); 
+//     res.redirect(`/listings/${id}`);
 // }))
 
 
@@ -331,7 +334,7 @@ app.use((err,req,res,next)=>{
 
 //------------------------------------------------------Part-B----------------------------------------------------
 //----------------------------------------------Creating Boilerplate----------------------------------------------
-//install ejs-mate -> npm i ejs-mate ------ require and app.engine 
+//install ejs-mate -> npm i ejs-mate ------ require and app.engine
 //https://npm.js.com/package/ejs-mate   --------
 //create layouts folder and inside boilerplate.js file --------- basic html (boilerplate)
 //create public folder and inside css folder inside style.css file ------ require and app.use
