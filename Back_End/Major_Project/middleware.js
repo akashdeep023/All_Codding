@@ -42,7 +42,7 @@ module.exports.validateUser = (req, res, next) => {
 		if (!req.user) {
 			return res.redirect("/signup");
 		} else {
-			return res.redirect(`/update/${req.user._id}`)
+			return res.redirect(`/update-form/${req.user._id}`)
 		}
 	} else {
 		next();
@@ -187,7 +187,7 @@ module.exports.varifyEmail = async (req, res, next) => {
 	if (!req.user) {
 		return res.redirect("/signup");
 	} else {
-		return res.redirect(`/update/${req.user._id}`)
+		return res.redirect(`/update-form/${req.user._id}`)
 	}
 };
 module.exports.varifyUserEmail = async (req, res, next) => {
@@ -204,7 +204,7 @@ module.exports.varifyUserEmail = async (req, res, next) => {
 	if (!req.user) {
 		return res.redirect("/signup");
 	} else {
-		return res.redirect(`/update/${req.user._id}`)
+		return res.redirect(`/update-form/${req.user._id}`)
 	}
 };
 

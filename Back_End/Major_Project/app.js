@@ -21,6 +21,8 @@ const listingRouter = require("./routers/listing.js")        //resturcturing lis
 const reviewRouter = require("./routers/review.js")          //resturcturing revies route
 const userRouter = require("./routers/user.js")          //resturcturing revies route
 const profileRouter = require("./routers/profile.js"); //resturcturing profile route
+const googleRoute = require("./routers/google.js"); //resturcturing google route
+const facebookRoute = require("./routers/facebook.js"); //resturcturing facebook route
 
 const session = require("express-session");             //require express-session to help storege data on temprory
 const MongoStore = require("connect-mongo")     //---  use to session store
@@ -128,9 +130,13 @@ app.use((req,res,next)=>{
 //     res.send(registeredUser);
 // })
 
+
+app.use("/auth/google", googleRoute);   // Restructuring google Router created me.
+app.use("/auth/facebook", facebookRoute);   // Restructuring facebook Router created me.
+
 app.use("/", userRouter);
 
-app.use("/profile", profileRouter); // Restructuring Profile Router create me.
+app.use("/profile", profileRouter); // Restructuring Profile Router created me.
 
 // //listings validation-----
 // const validateListing = (req,res,next)=>{
