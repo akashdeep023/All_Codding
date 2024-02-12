@@ -64,7 +64,7 @@ console.log(createJSON);                    //JSON data String hai
 //-----------------------------------------------------Status Codes---------------------------------------------------
 //Examples:
 //200 - OK                      -> calling exist API responses successfull
-//404 - Not Found               -> calling not exist API 
+//404 - Not Found               -> calling not exist API
 //400 - Bad Request             -> clint error responses
 //500 - Internal Server Error   -> server error responses
 
@@ -92,10 +92,10 @@ console.log(createJSON);                    //JSON data String hai
 // console.log("----------------------------------------------");
 //Normal code (without Promise channing )
 // let url = "https://catfact.ninja/fact";         //API URLs
-// console.log(fetch(url));                        // Return Promises  
+// console.log(fetch(url));                        // Return Promises
 // fetch(url)                                      // Inspect -> Network Tab -> select fetch -> Response
 //     .then((res)=>{
-//         console.log(res);                       // Promise ke Body me ReadableStream hote hai jisme Data hota hai 
+//         console.log(res);                       // Promise ke Body me ReadableStream hote hai jisme Data hota hai
 //         // console.log(res.json());             // Return Promises Object
 //         res.json().then((data)=>{               //parse
 //             console.log(data);
@@ -110,14 +110,14 @@ console.log("----------------------------------------------");
 //91 to 105 code Promises chaining 1 times
 
 let url = "https://catfact.ninja/fact";         //API URLs
-console.log(fetch(url));                        // Return Promises  
+console.log(fetch(url));                        // Return Promises
 fetch(url)                                      // fetch - lana || Inspect -> Network Tab -> select fetch -> Response
     .then((res)=>{
-        console.log(res);                       // Promise ke Body me ReadableStream hote hai jisme Data hota hai 
+        console.log(res);                       // Promise ke Body me ReadableStream hote hai jisme Data hota hai
         // console.log(res.json());             // Return Promises Object
-        return res.json();        
-    })    
-    .then((data)=>{               
+        return res.json();
+    })
+    .then((data)=>{
         console.log(data);
         console.log(data.fact);
     })
@@ -152,15 +152,15 @@ console.log("API Asyncronous");
 //-------------------------------------------------Using Fetch with async-await----------------------------------------------
 //MOST READABLE FORMATE FOR SEND REQUEST API---------------------------------
 
-let url2 = "https://catfact.ninja/fact";        
+let url2 = "https://catfact.ninja/fact";
 
 async function getFacts(){
     try{
-        let res = await fetch(url2);            //await nhi hota to data undifined pending hota 
+        let res = await fetch(url2);            //await nhi hota to data undifined pending hota
         let data = await res.json();
         console.log(data.fact);
 
-        let res2 = await fetch(url2);           
+        let res2 = await fetch(url2);
         let data2 = await res2.json();
         console.log(data2.fact);
     }catch(e){
